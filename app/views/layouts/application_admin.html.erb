@@ -1,3 +1,6 @@
+<!-- layout cho admin -->
+<!-- dung application_admin.js, application_admin.css -->
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -5,17 +8,18 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %>
-    <%= javascript_pack_tag "application", "data-turbolinks-track": "reload" %>
+
+    <%= stylesheet_link_tag "application_admin", media: "all", "data-turbolinks-track": "reload" %>
+    <%= javascript_pack_tag "application_admin", "data-turbolinks-track": "reload" %>
   </head>
+
   <body>
     <div>
-      <%= render "layouts/header" %>
-      <% flash.each do |message_type, message| %>
+    <%= render "layouts/header" %>
+    <% flash.each do |message_type, message| %>
         <div class="alert alert-<%= message_type %>"><%= message %></div>
       <% end %>
       <%= yield %>
-      <%= debug(params) if Rails.env.development? %>
     </div>
   </body>
 </html>
