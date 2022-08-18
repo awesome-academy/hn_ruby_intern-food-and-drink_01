@@ -21,6 +21,11 @@ en:
       contact: "Contact"
       food: "Food"
       drink: "Drink"
+      profile: "Profile"
+      setting: "Settings"
+      logout: "Log out"
+      signin: "Sign in"
+      signup: "Sign up"
   static_pages:
     home:
       food_delicous: "Food delicious"
@@ -34,3 +39,36 @@ en:
       featured: "Featured Products"
       product_name: "Product name"
       recent: "Recent product"
+  admin:
+    static_pages:
+      index:
+        not_admin: "You are not admin"
+        title_admin: Static page by Admin site
+  sessions:
+    create:
+      invalid: "invalid_email_password_combination"
+    new:
+      log_in: "Log in"
+      new_user: "Are you new user?"
+      sign_up_now!: "Sign up now"
+  users:
+    show:
+      not_found: "Not found user"
+    update:
+      updated: "Profile updated"
+      fail_update: "Profile update fail"
+    create:
+      welcome: "Welcome to the Sample App!"
+      not_success: "Don't success"
+    edit:
+      not: "Please log in."
+      update: "Update your profile"
+      btn_edit: "Save changes"
+      title: "Edit user"
+    new:
+      sign_up: "Sign up"
+      btn_create: "Create my account"
+  shared:
+    error_messages:
+      form: "The form contains"
+      error: "error"
