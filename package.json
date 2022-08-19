@@ -2,13 +2,25 @@
   "name": "hn-ruby-intern-food-and-drink-01",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.1.2",
+    "@fortawesome/fontawesome-svg-core": "^6.1.2",
+    "@fortawesome/free-solid-svg-icons": "^6.1.2",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "5.4.3",
+    "add": "^2.0.6",
+    "boostrap": "^2.0.0",
+    "bootstrap": "4.4.1",
+    "font-awesome": "^4.7.0",
+    "fontawesome-4.7": "^4.7.0",
+    "jquery": "3.4.1",
+    "popper.js": "^1.16.1",
     "turbolinks": "^5.2.0",
     "webpack": "^4.46.0",
-    "webpack-cli": "^3.3.12"
+    "webpack-cli": "^3.3.12",
+    "yarn": "^1.22.19"
   },
   "version": "0.1.0",
   "devDependencies": {
