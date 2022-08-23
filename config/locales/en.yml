@@ -1,4 +1,5 @@
 en:
+  not_product: "no exist product"
   layouts:
     header:
       about: "About"
@@ -171,3 +172,38 @@ en:
         not_admin: "you are not admin"
       sidebar:
         menu: "Menu"
+        manage_product: "Manage Product"
+        manage_order: "Manage Order"
+        logout: "Log out"
+    products:
+      create:
+        success: "create product success"
+        not_success: "create product fail"
+      update:
+        success: "update product success"
+        not_success: "update product fail"
+      destroy:
+        success: "destroy product success"
+        not_success: "destroy product fail"
+      form:
+        name: "Name"
+        unit_price: "Price"
+        description: "Description"
+        quantity: "Quantity"
+        category: "Category"
+        size: "Size"
+      edit:
+        update_btn: "Update product"
+      new:
+        new_btn: "New product"
+      index:
+        image: "Image"
+        name: "Name"
+        unit_price: "Price"
+        quantity: "Quantity"
+        size: "Size"
+        action: "Action"
+        new: "New product"
+        not_product: "Do not have any products"
+      product:
+        you_sure: "Are you sure"

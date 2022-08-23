@@ -168,3 +168,38 @@ vi:
         not_admin: "Bạn không phải là admin"
       sidebar:
         menu: "Menu"
+        manage_product: "Quản lý sản phẩm"
+        manage_order: "Quản lý Order"
+        logout: "Đăng xuất"
+    products:
+      create:
+        success: "Tạo sản phẩm thành công"
+        not_success: "Tạo sản phẩm thất bại"
+      update:
+        success: "Cập nhật thành công"
+        not_success: "Cập nhật thất bại"
+      destroy:
+        success: "Xóa sản phẩm thành công"
+        not_success: "Xóa sản phẩm thất bại"
+      form:
+        name: "Tên"
+        unit_price: "Giá"
+        description: "Miêu tả"
+        quantity: "Số lượng"
+        category: "Loại"
+        size: "Kích thước"
+      edit:
+        update_btn: "Cập nhật sản phẩm"
+      new:
+        new_btn: "Tạo mới sản phẩm"
+      index:
+        image: "Ảnh"
+        name: "Tên"
+        unit_price: "Giá"
+        quantity: "Số lượng"
+        size: "Kích thước"
+        action: "Hành động"
+        new: "Tạo mới"
+        not_product: "Không có sản phẩm nào"
+      product:
+        you_sure: "Bạn có chắc là muốn xóa không?"

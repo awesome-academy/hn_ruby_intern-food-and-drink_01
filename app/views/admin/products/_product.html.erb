@@ -1,0 +1,17 @@
+<tr>
+  <td><%= image_tag product.image, style: "width: 50px;"%></td>
+  <td><%= product.name %></td>
+  <td><%= product.unit_price %></td>
+  <td><%= product.quantity %></td>
+  <td><%= get_all_size product %></td>
+  <td>
+    <div class="action-btn">
+      <%= link_to edit_admin_product_path(product) do %>
+        <span class="fa fa-edit"></span>
+      <% end %>
+      <%= link_to admin_product_path(product), method: :delete, data: { confirm: t(".you_sure") } do %>
+        <span class="fa fa-trash"></span>
+      <% end %>
+    </div>
+  </td>
+</tr>
