@@ -90,3 +90,17 @@ en:
       success: "Congrutuation"
     show:
       name: "Day la cart"
+    update:
+      fail: "Update failed"
+      success: "Update successed"
+    destroy:
+      success: "Delete successed"
+      fail: "Delete failed"
+    index:
+      products: "Products"
+      price: "Price"
+      quantity: "Quantity"
+      total: "Total"
+      change: "Change"
+      summary: "Cart Summary"
+      checkout: "Proceed To Checkout"
