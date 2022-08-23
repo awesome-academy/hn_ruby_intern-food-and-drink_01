@@ -1,0 +1,21 @@
+    <!-- Cart Start -->
+<div class="container-fluid">
+  <div class="row px-xl-5">
+    <table class="table table-light table-borderless table-hover text-center mb-0">
+      <thead class="thead-dark">
+        <tr>
+          <th><%= t ".code" %></th>
+          <th><%= t ".name" %></th>
+          <th><%= t ".total" %></th>
+          <th><%= t ".create_at" %></th>
+          <th><%= t ".status" %></th>
+          <th><%= t ".action" %></th>
+        </tr>
+      </thead>
+      <tbody class="align-middle">
+        <%= render @orders %>
+      </tbody>
+      <%== pagy_bootstrap_nav(@pagy) %>
+    </table>
+  </div>
+</div>

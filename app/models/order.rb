@@ -12,4 +12,6 @@ class Order < ApplicationRecord
             length: {is: Settings.user.phone.phone_length}
   validates :address, presence: true,
             length: {in: Settings.user.address.address_range_length}
+
+  scope :lastest_order, ->{order created_at: :desc}
 end
