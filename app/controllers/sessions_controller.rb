@@ -22,9 +22,9 @@ class SessionsController < ApplicationController
   private
   def redirect
     if current_user.admin?
-      redirect_to admin_root_path
+      redirect_back_or admin_root_path
     else
-      redirect_to current_user
+      redirect_back_or current_user
     end
   end
 end

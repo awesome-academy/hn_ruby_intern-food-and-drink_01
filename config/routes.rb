@@ -5,10 +5,11 @@ Rails.application.routes.draw do
     get "/login", to: "sessions#new"
     post "/login", to: "sessions#create"
     delete "/logout", to: "sessions#destroy"
+    get "/cart_order", to: "carts#show"
 
     resources :users
-    resources :products
-    resources :sizes
+    resources :products, only: %i(index show)
+    resources :carts, only: %i(index create)
 
     namespace :admin do
       root to: "static_pages#index"

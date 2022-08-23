@@ -15,7 +15,8 @@
       <a class="h6 text-decoration-none text-truncate" href=""><%= t ".product_name" %></a>
       <div class="d-flex align-items-center justify-content-center mt-2">
         <h5><%=number_to_currency product.unit_price %></h5>
-        <h6 class="text-muted ml-2"><del><%=number_to_currency product.unit_price*1.2 %></del></h6>
+        <h6 class="text-muted ml-2"><del><%=number_to_currency product.unit_price %></del></h6>
+        <h1><%= product.product_sizes.size%></h1>
       </div>
     </div>
   </div>
