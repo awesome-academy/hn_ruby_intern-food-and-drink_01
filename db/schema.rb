@@ -86,7 +86,7 @@ ActiveRecord::Schema.define(version: 2022_08_19_094804) do
   create_table "products", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
     t.decimal "unit_price", precision: 10, scale: 2
-    t.string "image"
+    t.string "thumbnail"
     t.text "description"
     t.bigint "category_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -95,7 +95,7 @@ ActiveRecord::Schema.define(version: 2022_08_19_094804) do
   end
 
   create_table "sizes", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.integer "size"
+    t.string "size"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

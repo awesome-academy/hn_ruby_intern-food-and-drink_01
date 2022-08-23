@@ -72,3 +72,13 @@ en:
     error_messages:
       form: "The form contains"
       error: "error"
+  products:
+    index:
+      filter_price: "Filter by price"
+      filter_size: "Filter by size"
+      lastest: "Lastest"
+      popular: "popularity"
+      best_rating: "Best rating"
+    show:
+      size: "Size: "
+      not_found: "do not have product"

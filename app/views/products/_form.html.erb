@@ -1,0 +1,3 @@
+<%= form_for :size do |f| %>
+  <%= f.collection_radio_buttons :size_id, Size.all, :id, :size%>
+<% end %>

@@ -1,32 +1,46 @@
 
+Category.create!(
+  name: "food"
+)
 
-50.times do
-  title = Faker::Book.unique.title
-  description = Faker::Lorem.sentence(word_count: 50)
-  price = Faker::Commerce.price(range: 1..100.0)
-  thumbnail = Faker::Avatar.image
-  Product.create!(name: title,
-               unit_price: price,
-               image: thumbnail,
-               description: description,
-               category_id: Category.find(1).id,
-               created_at: (rand*30).days.ago,
-               updated_at: (rand*30).days.ago
-  )
-end
+Category.create!(
+  name: "drink"
+)
 
-50.times do
-  title = Faker::Beer.unique.name
+20.times do |n|
+  title = Faker::Food.unique.dish
   description = Faker::Food.description
   price = Faker::Commerce.price(range: 1..100.0)
   thumbnail = Faker::Avatar.image
-  Product.create!(name: title,
-               description: description,
+  product = Product.create!(name: title,
                unit_price: price,
-               image: thumbnail,
-               category_id: Category.find(2).id,
-               created_at: (rand*30).days.ago
+               thumbnail: thumbnail,
+               description: description,
+               category_id: 1,
+               created_at: (rand*30).days.ago,
+               updated_at: (rand*30).days.ago
   )
+  product.image.attach(io: File.open("#{Rails.root}/app/assets/images/images/phot#{n+1}.jpg"),
+                                    filename: "photo#{n+1}.jpg",
+                                    content_type: "image/jpg")
+end
+
+20.times do |n|
+  title = Faker::Food.unique.fruits
+  description = Faker::Lorem.sentence(word_count: 50)
+  price = Faker::Commerce.price(range: 1..100.0)
+  thumbnail = Faker::Avatar.image
+  product = Product.create!(name: title,
+               unit_price: price,
+               thumbnail: thumbnail,
+               description: description,
+               category_id: 2,
+               created_at: (rand*30).days.ago,
+               updated_at: (rand*30).days.ago
+  )
+  product.image.attach(io: File.open("#{Rails.root}/app/assets/images/images/phot#{n+1}.jpg"),
+                                    filename: "photo#{n+1}.jpg",
+                                    content_type: "image/jpg")
 end
 
 Size.create!(
