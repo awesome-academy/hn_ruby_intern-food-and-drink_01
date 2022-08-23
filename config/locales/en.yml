@@ -137,6 +137,12 @@ en:
     update:
       cancle: "Cancle successfuly"
       cancle_fail: "Cancle fails"
+  user_mailer:
+    notification:
+      sub: "Notification"
+      title: "Notificaion from Food And Drink "
+      hi: "Hi "
+      action: "We just have updated your order to "
   hepler:
     product_stock: Product %{prod_name} is out of stock, please update quantity
   admin:
@@ -157,6 +163,11 @@ en:
         number: "Number"
         size: "Size"
         price: "Price"
+      update:
+        update_success: "Update success"
+        update_fail: "Update fail"
     static_pages:
+      index:
+        not_admin: "you are not admin"
       sidebar:
         menu: "Menu"

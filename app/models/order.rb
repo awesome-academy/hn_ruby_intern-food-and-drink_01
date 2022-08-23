@@ -2,7 +2,7 @@ class Order < ApplicationRecord
   has_many :order_details, dependent: :destroy
   belongs_to :user
 
-  enum status: {pending: 0, accepted: 1, complete: 2, canceled: 3}
+  enum status: {pending: 0, accepted: 1, completed: 2, canceled: 3}
 
   ORDER_ATTRS = %w(name phone_num address note total_money).freeze
 
@@ -14,4 +14,31 @@ class Order < ApplicationRecord
             length: {in: Settings.user.address.address_range_length}
 
   scope :lastest_order, ->{order created_at: :desc}
+  after_save :send_mail_notify
+
+  def send_mail_notify
+    UserMailer.notification(self).deliver_now
+  end
+
+  def handle_order order_params
+    ActiveRecord::Base.transaction do
+      update!(status: order_params["status"])
+      return true unless completed?
+
+      order_details.each do |order_detail|
+        new_quan = order_detail.product_size.product.quantity - order_detail.num
+        update_order order_detail, new_quan
+        raise ActiveRecord::Rollback if new_quan.negative?
+      end
+    end
+  rescue ActiveRecord::RecordInvalid => e
+    errors.add(:base, e.message)
+    false
+  end
+
+  private
+
+  def update_order order_detail, new_quantity
+    order_detail.product_size.product.update!(quantity: new_quantity)
+  end
 end

@@ -1,0 +1,4 @@
+<h1><%= t ".title" %></h1>
+<p> <%= t ".hi" %><%= @user.name %>,</p>
+<p> <%= t ".action" %><%= @order.status %></p>
+<%= link_to t(".detail"), order_url(id: @order.id) %>
