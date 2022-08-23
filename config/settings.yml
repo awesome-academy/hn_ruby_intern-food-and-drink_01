@@ -1,4 +1,20 @@
+user:
+  email_regex: !ruby/regexp /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  email:
+    email_range_length: !ruby/range 15..255
+  name:
+    name_max_length: 30
+  password:
+    password_min: 6
+  phone:
+    phone_length: 10
+  address:
+    address_range_length: !ruby/range 15..255
+
 view:
   layouts:
     header:
       num: 0
+admin:
+  layouts:
+    link: "layouts/application_admin"
