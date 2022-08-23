@@ -15,6 +15,11 @@ view:
   layouts:
     header:
       num: 0
+  products:
+    index:
+      num_small: 10
+      num_medium: 20
+      num_big: 30
 admin:
   layouts:
     link: "layouts/application_admin"
