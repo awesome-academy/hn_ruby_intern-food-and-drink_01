@@ -104,3 +104,15 @@ vi:
       change: "Thay đổi"
       summary: "Cart Summary"
       checkout: "Đặt hàng"
+  orders:
+    create:
+      fail: "Đặt hàng thất bại"
+      success: "Đặt hàng thành công"
+      checkout_fail: "Mua hàng thất bại"
+    new:
+      order_total: "Tổng giá"
+      product: "Các sản phẩm"
+      total: "Tổng cộng"
+      submit_pay: "Đặt hàng"
+  hepler:
+    product_stock: "Product %{prod_name} is out of stock, please update quantity"

@@ -25,7 +25,9 @@
             <h5><%= t ".total" %></h5>
             <h5><%= number_to_currency total_price %></h5>
           </div>
-          <button class="btn btn-block btn-primary font-weight-bold my-3 py-3"><%= t ".checkout" %></button>
+          <%= link_to new_order_path do %>
+            <button class="btn btn-block btn-primary font-weight-bold my-3 py-3"><%= t ".checkout" %></button>
+          <% end %>
         </div>
       </div>
     </div>

@@ -9,7 +9,8 @@ Rails.application.routes.draw do
     resources :users
     resources :products, only: %i(index show)
     resources :carts, except: :show
-
+    resources :orders
+    
     namespace :admin do
       root to: "static_pages#index"
       resources :static_pages

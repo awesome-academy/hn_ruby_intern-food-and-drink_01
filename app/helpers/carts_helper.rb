@@ -21,10 +21,26 @@ module CartsHelper
     end
   end
 
+  def clear_carts
+    user_id = session[:user_id]
+    session["cart_#{user_id}"] = {}
+  end
+
   def init_cart
     user_id = session[:user_id]
     session["cart_#{user_id}"] ||= {}
     @carts = session["cart_#{user_id}"] ||= {}
     clean_carts
+  end
+
+  def check_quantity_product_sizes
+    @product_sizes.each do |item|
+      product_id = item.id
+      quantity = @carts[product_id.to_s]
+      if quantity > item.product.quantity
+        falsh[:danger] = t("hepler.product_stock", prod_name: item.product.name)
+        redirect_to root_path
+      end
+    end
   end
 end
