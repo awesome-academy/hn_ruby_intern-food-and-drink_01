@@ -1,5 +1,6 @@
 en:
   not_product: "no exist product"
+  not_category: "not found category"
   layouts:
     header:
       about: "About"
@@ -91,7 +92,6 @@ en:
       name_product: "Name of product"
       min: "Min price"
       max: "Max price"
-      
   carts:
     create:
       please_login: "Please login"
@@ -182,6 +182,7 @@ en:
         menu: "Menu"
         manage_product: "Manage Product"
         manage_order: "Manage Order"
+        manage_category: "Manage Category"
         logout: "Log out"
     products:
       create:
@@ -215,3 +216,32 @@ en:
         not_product: "Do not have any products"
       product:
         you_sure: "Are you sure"
+    categories:
+      create:
+        create_success: "Create success"
+        create_fail: "Create fail"
+      update:
+        update_success: "Update success"
+        update_fail: "Update fail"
+      destroy:
+        destroy_success: "Destroy success"
+        destroy_fail: "Destroy fail"
+        have_product: "Have an exist product"
+      form:
+        title: "Cập nhật"
+        name_category: "Name"
+      edit:
+        edit: "Update catgory"
+        title: "Update Category"
+        name_category: "Name"
+      index:
+        code: "Code"
+        category: "Category"
+        action: "Action"
+        new: "New Category"
+      category:
+        you_sure: "Are you sure"
+      new:
+        new: "New category"
+        title: "New category"
+        name: "Name"

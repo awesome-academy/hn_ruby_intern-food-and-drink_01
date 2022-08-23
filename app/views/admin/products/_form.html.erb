@@ -1,4 +1,5 @@
 <%= form_for [:admin, @product] do |f| %>
+  <%= render "admin/shared/error_messages", object: f.object %>
   <%= f.label :name, t(".name") %>
   <%= f.text_field :name, class: "form-control" %>
   <%= f.label :unit_price, t(".unit_price") %>

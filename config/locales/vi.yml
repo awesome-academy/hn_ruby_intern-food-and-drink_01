@@ -1,4 +1,6 @@
 vi:
+  not_product: "Sản phẩm không tồn tại"
+  not_category: "Không tìm thấy loại hàng"
   layouts:
     header:
       about: "Về chúng tôi"
@@ -210,3 +212,32 @@ vi:
         not_product: "Không có sản phẩm nào"
       product:
         you_sure: "Bạn có chắc là muốn xóa không?"
+    categories:
+      create:
+        create_success: "Tạo mới thành công"
+        create_fail: "Tạo mới thất bại"
+      update:
+        update_success: "Cập nhật thành công"
+        update_fail: "Cập nhật thất bại"
+      destroy:
+        destroy_success: "Xóa thành công"
+        destroy_fail: "Xóa thất bại"
+        have_product: "Đã có sản phẩm tồn tại"
+      form:
+        title: "Cập nhật"
+        name_category: "Name"
+      index:
+        code: "Mã"
+        category: "Loại"
+        action: "Hành động"
+        new: "Thêm mới"
+      category:
+        you_sure: "Bạn có chắc không?"
+      edit:
+        name_category: "Tên"
+        title: "Cập nhật"
+        edit: "Cập nhật"
+      new:
+        name_category: "Tên"
+        title: "thêm mới"
+        new: "Thêm mới"

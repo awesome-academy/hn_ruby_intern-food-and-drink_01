@@ -10,7 +10,9 @@ user:
     phone_length: 10
   address:
     address_range_length: !ruby/range 15..255
-
+category:
+  name:
+    name_max_length: 20
 view:
   layouts:
     header:
@@ -23,6 +25,7 @@ view:
 admin:
   layouts:
     link: "layouts/application_admin"
+  category: 8
 product:
   limit_new: 10
 carts:
