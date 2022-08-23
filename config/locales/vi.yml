@@ -131,3 +131,24 @@ vi:
       action: "Hoạt động"
   hepler:
     product_stock: "Product %{prod_name} is out of stock, please update quantity"
+  admin:
+    orders:
+      index:
+        code: "Mã"
+        name: "Tên người dùng"
+        phone: "Số điện thoại"
+        address: "Địa chỉ"
+        note: "Ghi chú"
+        status: "Trạng thái"
+        total: "Tổng tiền"
+        create: "Ngày tạo"
+        info: "Chi tiết"
+      show:
+        image: "Hình ảnh"
+        name: "Tên"
+        number: "Số lượng"
+        size: "Size"
+        price: "Giá"
+    static_pages:
+      sidebar:
+        menu: "Menu"
