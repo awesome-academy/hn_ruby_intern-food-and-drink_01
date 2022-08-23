@@ -16,8 +16,8 @@
         <div class="d-flex align-items-center mb-4 pt-2">
           <div class="input-group quantity mr-3" style="width: 130px;">
             <%= form_with url: carts_path(product_id: @product.id), method: :post do |f| %>
-                <strong class="text-dark mr-3"><%= t ".size" %></strong>
-                <%= f.collection_radio_buttons :size_id, @product.sizes, :id, :size %>
+              <strong class="text-dark mr-3"><%= t ".size" %></strong>
+              <%= f.collection_radio_buttons :size_id, @product.sizes, :id, :size %>
               <%= f.number_field :num, value: 1, class: "form-control bg-secondary border-0 text-center", min: 1 %>
               <%= f.submit "Add to Cart", class: "btn btn-primary" %>
             <% end %>
@@ -43,3 +43,4 @@
       </div>
     </div>
   </div>
+</div>
