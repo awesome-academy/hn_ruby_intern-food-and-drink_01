@@ -25,3 +25,5 @@ admin:
     link: "layouts/application_admin"
 product:
   limit_new: 10
+carts:
+  min_quantity: 0

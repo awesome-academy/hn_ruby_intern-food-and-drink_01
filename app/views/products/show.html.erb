@@ -13,26 +13,15 @@
         <h3><%= @product.name %></h3>
         <h3 class="font-weight-semi-bold mb-4"><%=number_to_currency @product.unit_price %></h3>
         <p class="mb-4"><%= @product.description %></p>
-        <div class="d-flex mb-3">
-          <strong class="text-dark mr-3"><%= t ".size" %></strong>
-          <%= render "products/form"%>
-        </div>
         <div class="d-flex align-items-center mb-4 pt-2">
           <div class="input-group quantity mr-3" style="width: 130px;">
-            <div class="input-group-btn">
-              <button class="btn btn-primary btn-minus">
-                <i class="fa fa-minus"></i>
-              </button>
-            </div>
-            <input type="text" class="form-control bg-secondary border-0 text-center" value="1">
-            <div class="input-group-btn">
-              <button class="btn btn-primary btn-plus">
-                <i class="fa fa-plus"></i>
-              </button>
-            </div>
+            <%= form_with url: carts_path(product_id: @product.id), method: :post do |f| %>
+                <strong class="text-dark mr-3"><%= t ".size" %></strong>
+                <%= f.collection_radio_buttons :size_id, @product.sizes, :id, :size %>
+              <%= f.number_field :num, value: 1, class: "form-control bg-secondary border-0 text-center", min: 1 %>
+              <%= f.submit "Add to Cart", class: "btn btn-primary" %>
+            <% end %>
           </div>
-          <button class="btn btn-primary px-3"><i class="fa fa-shopping-cart mr-1"></i> Add To
-            Cart</button>
         </div>
         <div class="d-flex pt-2">
           <strong class="text-dark mr-2">Share on:</strong>

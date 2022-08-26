@@ -12,10 +12,10 @@
     <div class="col-lg-6 text-center text-lg-right">
       <div class="d-inline-flex align-items-center">
         <div class="btn-group">
-          <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">My Account</button>
+          <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown"><%= t ".account"%></button>
           <% if logged_in? %>
             <div class="dropdown-menu dropdown-menu-right">
-              <% if current_user.user? %>
+              <% if current_user.customer? %>
                 <%= link_to t(".profile"), current_user, class:"dropdown-item" %>
                 <%= link_to t(".setting"), edit_user_path(current_user), class:"dropdown-item" %>
               <% end %>
@@ -92,10 +92,10 @@
               <i class="fas fa-heart text-primary"></i>
               <span class="span1 badge text-secondary border border-secondary rounded-circle" ><%= Settings.view.layouts.header.num %></span>
             </a>
-            <a href="" class="btn px-0 ml-3">
-              <i class="fas fa-shopping-cart text-primary"></i>
-              <span class="span1 badge text-secondary border border-secondary rounded-circle" ><%= Settings.view.layouts.header.num %></span>
-            </a>
+            <%= link_to cart_order_path do %>
+              <span class="fas fa-shopping-cart text-primary"></span>
+              <span class="span1 badge text-secondary border border-secondary rounded-circle" ><%= init_cart.length%></span>
+            <% end %>
           </div>
         </div>
       </nav>

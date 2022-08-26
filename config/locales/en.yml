@@ -26,6 +26,7 @@ en:
       logout: "Log out"
       signin: "Sign in"
       signup: "Sign up"
+      account: "My account"
   static_pages:
     home:
       food_delicous: "Food delicious"
@@ -81,4 +82,11 @@ en:
       best_rating: "Best rating"
     show:
       size: "Size: "
+  carts:
+    create:
+      please_login: "Please login"
+      error_num: "number is not available"
       not_found: "do not have product"
+      success: "Congrutuation"
+    show:
+      name: "Day la cart"
