@@ -122,6 +122,10 @@ vi:
       number: "Số lượng"
       size: "Kích thước"
       price: "Giá"
+      destroy: "Hủy đơn hàng"
+      reason: "Lý do"
+      close: "Đóng"
+      save: "Lưu"
     index:
       code: "Mã sản phẩm"
       name: "Tên người nhận"

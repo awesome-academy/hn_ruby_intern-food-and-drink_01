@@ -21,8 +21,8 @@ class User < ApplicationRecord
                         length: {minimum: Settings.user.password.password_min},
                         allow_nil: true, if: :password
   has_secure_password
-  private
 
+  private
   def downcase_email
     email.downcase!
   end

@@ -2,8 +2,9 @@ class OrdersController < ApplicationController
   before_action :logged_in_user, only: %i(new create)
   before_action :init_cart, :load_product_sizes
   before_action :check_quantity_product_sizes, only: %i(new create)
-  before_action :find_order, only: :show
+  before_action :find_order, only: %i(show update)
   before_action :load_order_details, only: :show
+  before_action :check_status_order, only: :update
 
   def index
     @pagy, @orders = pagy Order.lastest_order
@@ -18,6 +19,15 @@ class OrdersController < ApplicationController
   def create
     @order = current_user.orders.new order_params
     create_transaction
+  end
+
+  def update
+    if @order.update(reason: params_reason[:reason], status: :canceled)
+      flash[:success] = t ".cancle"
+    else
+      flash.now[:danger] = t ".cancle_fail"
+    end
+    redirect_to orders_url
   end
 
   private
@@ -70,5 +80,12 @@ class OrdersController < ApplicationController
 
     flash[:warning] = t ".not_found"
     redirect_to root_path
+  end
+
+  def check_status_order
+    return if @order.pending?
+
+    flash[:danger] = t ".danger"
+    redirect_to orders_path
   end
 end

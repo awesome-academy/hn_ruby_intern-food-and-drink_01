@@ -21,3 +21,8 @@
 .p-3{
   max-width: 700px;
 }
+.modal-content {
+  width: 750px;
+  height: 600px;
+  margin: auto;
+}
