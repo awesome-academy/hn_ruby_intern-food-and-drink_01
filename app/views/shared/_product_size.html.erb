@@ -1,0 +1,4 @@
+<div class="d-flex justify-content-between">
+  <p><%= product_size.product.name %></p>
+  <p><%=number_to_currency product_size.product.unit_price %>x<%= @carts[product_size.id.to_s] %></p>
+</div>

@@ -8,8 +8,9 @@ Rails.application.routes.draw do
     get "/cart_order", to: "carts#index"
 
     resources :users
-    resources :products, only: %i(index, :show)
+    resources :products, only: %i(index show)
     resources :carts, only: %i(index create update destroy)
+    resources :orders
 
     namespace :admin do
       root to: "static_pages#index"

@@ -104,3 +104,16 @@ en:
       change: "Change"
       summary: "Cart Summary"
       checkout: "Proceed To Checkout"
+  orders:
+    create:
+      fail: "order fail"
+      success: "order success"
+      checkout_fail: "checkout fail"
+    new:
+      order_total: "Order Total"
+      product: "Products"
+      total: "Total"
+      payment: "Payment"
+      place_order: "Place Order"
+  hepler:
+    product_stock: Product %{prod_name} is out of stock, please update quantity
