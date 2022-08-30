@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     resources :users
     resources :products, only: %i(index show)
     resources :carts, only: %i(index create update destroy)
-    resources :orders
+    resources :orders, except: :destroy
 
     namespace :admin do
       root to: "static_pages#index"
