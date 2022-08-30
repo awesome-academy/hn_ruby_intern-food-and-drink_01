@@ -1,0 +1,106 @@
+vi:
+  layouts:
+    header:
+      about: "Về chúng tôi"
+      contact: "Kết nối"
+      help: "Trợ giúp"
+      faqs: "FAQs"
+      sign_in: "Đăng nhập"
+      sign_up: "Đăng ký"
+      food_title: "Đồ ăn"
+      drink_title: "Đồ uống"
+      search_for_product: "Tìm kiếm sản phẩm"
+      service: "Dịch vụ khác hàng"
+      phone: "+0123456789"
+      categories: "Thể loại"
+      home: "Trang chủ"
+      shop: "Mua hàng"
+      pages: "Trang"
+      shoping_cart: "Giỏ hàng"
+      checkout: "đặt hàng"
+      contact: "kết nối"
+      food: "Thức ăn"
+      drink: "Đồ uống"
+      profile: "Thông tin cá nhân"
+      setting: "Cài đặt"
+      logout: "Đăng xuất"
+      signin: "Đăng nhập"
+      signup: "Đăng ký"
+      account: "Tài khoản"
+  static_pages:
+    home:
+      food_delicous: "Thức ăn thơm ngon"
+      food_describe: "Lưu giữ những hương vị khó quên"
+      shop_now: "Đặt hàng ngay"
+      drink_wonderful: "Nước uống tuyệt vời"
+      drink_describe: "Bật tung cảm xúc, thổi bừng năng lượng"
+      categories: "Thể loại"
+      category_name: "Tên thể loại"
+      product: "Các sản phẩm"
+      featured: "Các sản phẩm nổi bật"
+      product_name: ""
+      recent: "Sản phẩm gần đây"
+  admin:
+    static_pages:
+      index:
+        not_admin: "Bạn không phải là admin"
+        title_admin: "Đây là trang admin"
+  sessions:
+    create:
+      invalid: "tài khoản mật khẩu chưa chính xác"
+    new:
+      log_in: "Đăng nhập"
+      new_user: "Bạn là người mới ?"
+      sign_up_now!: "Đăng ký ngay"
+  users:
+    show:
+      not_found: "Không tìm thấy người dùng"
+    update:
+      updated: "đã cập nhật thông tin cá nhân"
+      fail_update: "Cập nhật thông tin cá nhân thất bại"
+    create:
+      welcome: "Chào mừng đến với food and drink"
+      not_success: "Không thành công"
+    edit:
+      not: "Hãy đăng nhập trước"
+      update: "Cập nhật tài khoản của bạn"
+      btn_edit: "Xác nhận thay đổi"
+      title: "Thay đổi thông tin"
+    new:
+      sign_up: "Đăng ký"
+      btn_create: "Tạo tài khoản"
+  shared:
+    error_messages:
+      form: "Biểu mẫu gồm"
+      error: "lỗi"
+  products:
+    index:
+      filter_price: "Lọc theo giá"
+      filter_size: "Lọc theo size"
+      lastest: "Mới nhất"
+      popular: "Phổ biến"
+      best_rating: "Yêu thích"
+    show:
+      size: "Kích thước: "
+  carts:
+    create:
+      please_login: "Hãy đăng nhập trước"
+      error_num: "Số lượng không thỏa mãn"
+      not_found: "Không tìm thấy sản phẩm"
+      success: "Thành công"
+    show:
+      name: "Day la cart"
+    update:
+      fail: "Cập nhật thất bại"
+      success: "Cập nhật thành công"
+    destroy:
+      success: "Xóa thành công"
+      fail: "Xóa thất bại"
+    index:
+      products: "Sản phẩm"
+      price: "Giá"
+      quantity: "Số lượng"
+      total: "Tổng"
+      change: "Thay đổi"
+      summary: "Cart Summary"
+      checkout: "Đặt hàng"

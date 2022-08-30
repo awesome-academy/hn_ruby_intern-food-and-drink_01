@@ -92,9 +92,9 @@
               <i class="fas fa-heart text-primary"></i>
               <span class="span1 badge text-secondary border border-secondary rounded-circle" ><%= Settings.view.layouts.header.num %></span>
             </a>
-            <%= link_to cart_order_path do %>
+            <%= link_to carts_path do %>
               <span class="fas fa-shopping-cart text-primary"></span>
-              <span class="span1 badge text-secondary border border-secondary rounded-circle" ><%= init_cart.length%></span>
+              <span class="span1 badge text-secondary border border-secondary rounded-circle" ><%= count_carts %></span>
             <% end %>
           </div>
         </div>
