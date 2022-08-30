@@ -88,4 +88,21 @@ class OrdersController < ApplicationController
     flash[:danger] = t ".danger"
     redirect_to orders_path
   end
+
+  def load_order_details
+    @order_details = @order.order_details.includes(:product_size)
+    return if @order_details
+
+    flash[:danger] =  t ".not_found"
+    redirect_to orders_url
+  end
+
+  def find_order
+    @order = Order.find_by id: params[:id]
+
+    return if @order
+
+    flash[:warning] = t ".not_found"
+    redirect_to root_path
+  end
 end
