@@ -30,6 +30,15 @@ class OrdersController < ApplicationController
     redirect_to orders_url
   end
 
+  def update
+    if @order.update(reason: params[:reason], status: :canceled)
+      flash[:success] = "Huy don hang thanh cong"
+    else
+      flash.now[:danger] = "Don hang da duoc giao"
+    end
+    redirect_to orders_url
+  end
+
   private
 
   def order_params
@@ -104,5 +113,12 @@ class OrdersController < ApplicationController
 
     flash[:warning] = t ".not_found"
     redirect_to root_path
+  end
+
+  def check_status_order
+    return if @order.pending?
+
+    flash[:danger] = t ".danger"
+    redirect_to orders_path
   end
 end
