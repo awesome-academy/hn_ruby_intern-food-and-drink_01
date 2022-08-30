@@ -1,0 +1,24 @@
+<div class="admin-page">
+  <div> <%= render "admin/static_pages/sidebar" %> </div>
+  <div class="account-manage-page">
+    <table class="rwd-table">
+      <thead>
+        <tr>
+          <th>Code</th>
+          <th>Name</th>
+          <th>Phone Number</th>
+          <th>address</th>
+          <th>note</th>
+          <th>status</th>
+          <th>Total money</th>
+          <th>Create</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @orders %>
+      </tbody>
+    </table>
+    <%== pagy_nav(@pagy) %>
+  </div>
+</div>

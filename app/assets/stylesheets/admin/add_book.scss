@@ -1,0 +1,72 @@
+.add-book-page {
+    background: url("https://www.xmple.com/wallpaper/white-red-gradient-linear-1920x1080-c2-ffffff-fa8072-a-90-f-14.svg") no-repeat;
+    background-size: cover;
+    padding: 40px 100px 50px;
+
+}
+
+.form {
+    z-index: 1;
+    background: #FFFFFF;
+    padding: 45px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    border-radius: 24px;
+
+    .form-title {
+        font-size: 36px;
+        font-weight: 700;
+        color: #e76161;
+    }
+
+    .form-control,
+    select {
+        font-family: "Roboto", sans-serif;
+        outline: 0;
+        background: #f2f2f2;
+        width: 100%;
+        border: 0;
+        margin: 0 0 15px;
+        padding: 15px;
+        box-sizing: border-box;
+        font-size: 14px;
+        border-radius: 8px;
+
+        &:focus {
+            border-color: #e76161;
+            box-shadow: 0 0 8px #e76161;
+        }
+    }
+
+    .submit-btn {
+        font-family: "Roboto", sans-serif;
+        text-transform: uppercase;
+        outline: 0;
+        background: #e76161;
+        width: 100%;
+        border: 0;
+        padding: 15px;
+        color: #FFFFFF;
+        font-size: 14px;
+        -webkit-transition: all 0.3 ease;
+        transition: all 0.3 ease;
+        cursor: pointer;
+        border-radius: 8px;
+    }
+
+    .submit-btn:hover,
+    .submit-btn:active,
+    .submit-btn:focus {
+        background: #e76161;
+    }
+
+    .message {
+        margin: 15px 0 0;
+        color: #b3b3b3;
+        font-size: 12px;
+    }
+
+    .message a {
+        color: #e76161;
+        text-decoration: none;
+    }
+}

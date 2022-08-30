@@ -3,8 +3,9 @@ class OrdersController < ApplicationController
   before_action :init_cart
   before_action :load_product_sizes
   before_action :check_quantity_product_sizes, only: %i(new create)
-  before_action :find_order, only: :show
+  before_action :find_order, only: %i(show update)
   before_action :load_order_details, only: :show
+  before_action :check_status_order, only: :update
 
   def index
     @pagy, @orders = pagy Order.lastest_order
@@ -24,6 +25,15 @@ class OrdersController < ApplicationController
       flash[:danger] = t ".fail"
       render :new
     end
+  end
+
+  def update
+    if @order.update(reason: params[:reason], status: :canceled)
+      flash[:success] = "Huy don hang thanh cong"
+    else
+      flash.now[:danger] = "Don hang da duoc giao"
+    end
+    redirect_to orders_url
   end
 
   private
@@ -76,5 +86,12 @@ class OrdersController < ApplicationController
 
     flash[:warning] = t ".not_found"
     redirect_to root_path
+  end
+
+  def check_status_order
+    return if @order.pending?
+
+    flash[:danger] = t ".danger"
+    redirect_to orders_path
   end
 end

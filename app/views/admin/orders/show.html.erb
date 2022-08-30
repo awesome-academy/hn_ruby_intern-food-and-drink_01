@@ -1,0 +1,20 @@
+<div class="admin-page">
+  <div> <%= render "admin/static_pages/sidebar" %> </div>
+  <div class="account-manage-page">
+    <table class="rwd-table">
+      <thead>
+        <tr>
+          <th>Image</th>
+          <th>Name</th>
+          <th>Number</th>
+          <th>Size</th>
+          <th>Prices</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render partial: "order_detail", collection: @order_details %>
+      </tbody>
+    </table>
+  </div>
+</div>

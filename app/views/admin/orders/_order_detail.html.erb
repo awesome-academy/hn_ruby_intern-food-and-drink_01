@@ -1,0 +1,8 @@
+
+<tr>
+  <td><%= image_tag order_detail.product_size.product.image, style: "width: 50px;" %></td>
+  <td><%= order_detail.product_size.product.name %></td>
+  <td><%= order_detail.num %></td>
+  <td><%= order_detail.product_size.size.size %></td>
+  <td><%= number_to_currency order_detail.price %></td>
+</tr>

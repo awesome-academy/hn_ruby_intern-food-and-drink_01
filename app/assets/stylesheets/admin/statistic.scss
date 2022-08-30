@@ -1,0 +1,71 @@
+.statistics-page {
+    flex: 1 1;
+    background-color: #F3F3F9;
+    padding: 50px;
+
+    .total-section {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+    }
+
+    .card {
+        border-radius: 8px;
+        display: flex;
+        justify-content: space-between;
+        padding: 16px;
+        background: #fff;
+
+        &.total-users {
+            background: linear-gradient(230deg, #759bff, #843cf6);
+        }
+
+        &.total-books {
+            background: linear-gradient(230deg, #fc5286, #fbaaa2);
+        }
+
+        &.total-subjects {
+            background: linear-gradient(230deg, #ffc480, #ff763b);
+        }
+
+        &.total-categories {
+            background: linear-gradient(230deg, #0e4cfd, #6a8eff);
+        }
+
+        .card-left-section {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-header,
+        .card-current-date {
+            font-size: 18px;
+            font-weight: 500;
+            color: #fff;
+        }
+
+        .card-total {
+            font-size: 24px;
+            font-weight: 700;
+            color: #fff;
+        }
+    }
+
+    .admin-list {
+        margin-top: 32px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+
+        .user-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: #fff;
+            padding: 16px;
+            border-radius: 12px;
+        }
+    }
+}

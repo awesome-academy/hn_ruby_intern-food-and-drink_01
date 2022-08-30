@@ -1,0 +1,53 @@
+.account-manage-page {
+    flex: 1 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+    gap: 32px;
+}
+
+.rwd-table {
+    background: #fff;
+    color: #282a2a;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    width: 100%;
+    border-collapse: collapse;
+
+
+    tr {
+        border-color: lighten(#34495E, 10%);
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+
+    th,
+    td {
+        text-align: left;
+        padding: 16px;
+    }
+
+    th {
+        background-color: #e76161;
+    }
+
+    th,
+    td:before {
+        color: #fff;
+        font-weight: 700;
+    }
+
+    .action-btn {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        .fa {
+            font-size: 22px;
+        }
+    }
+}

@@ -9,6 +9,16 @@ User.create!(
   role: "customer"
 )
 
+User.create!(
+  name: "Than Minh Nam Nam",
+  email: "thanminhnam1@gmail.com",
+  phone_num: "1234567809",
+  address: "hihihihihihihihihihihihihihihihi",
+  password: "123456",
+  password_confirmation: "123456",
+  role: "admin"
+)
+
 Category.create!(
   name: "food"
 )
