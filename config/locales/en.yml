@@ -27,6 +27,7 @@ en:
       signin: "Sign in"
       signup: "Sign up"
       account: "My account"
+      history_order: "History Order"
   static_pages:
     home:
       food_delicous: "Food delicious"
@@ -115,5 +116,19 @@ en:
       total: "Total"
       payment: "Payment"
       place_order: "Place Order"
+    show:
+      not_found: "Not found production"
+      image: "Image"
+      name: "Name"
+      number: "Number"
+      size: "Size"
+      price: "Price"
+    index:
+      code: "Code"
+      name: "Name User"
+      total: "Total money"
+      create_at: "Create at"
+      status: "Status"
+      action: "Action"
   hepler:
     product_stock: Product %{prod_name} is out of stock, please update quantity

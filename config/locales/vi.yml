@@ -27,6 +27,7 @@ vi:
       signin: "Đăng nhập"
       signup: "Đăng ký"
       account: "Tài khoản"
+      history_order: "Lịch sử đặt hàng"
   static_pages:
     home:
       food_delicous: "Thức ăn thơm ngon"
@@ -114,5 +115,19 @@ vi:
       product: "Các sản phẩm"
       total: "Tổng cộng"
       submit_pay: "Đặt hàng"
+    show:
+      not_found: "Không tìm thấy sanr phẩm"
+      image: "Hình ảnh"
+      name: "Tên"
+      number: "Số lượng"
+      size: "Kích thước"
+      price: "Giá"
+    index:
+      code: "Mã sản phẩm"
+      name: "Tên người nhận"
+      total: "Tổng tiền"
+      create_at: "Ngày tạo"
+      status: "Trạng thái"
+      action: "Hoạt động"
   hepler:
     product_stock: "Product %{prod_name} is out of stock, please update quantity"
