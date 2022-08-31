@@ -1,17 +1,26 @@
 class Admin::OrdersController < Admin::BaseController
-  before_action :find_order, only: :show
+  before_action :find_order, only: %i(show update)
   before_action :load_order_details, only: :show
-
+  before_action :check_status_order, only: :update
   def index
     @pagy, @orders = pagy Order.lastest_order
   end
 
   def show; end
 
+  def update
+    if @order.update(order_params)
+      current_user.send_mail_notify @order
+      flash[:success] = "Thay doi thanh cong"
+    else
+      flash.now[:danger] = "that bai"
+    end
+    redirect_to admin_orders_path
+  end
   private
 
   def order_params
-    params.require(:order).permit Order::status
+    params.require(:order).permit(:status)
   end
 
   def load_order_details
@@ -21,7 +30,7 @@ class Admin::OrdersController < Admin::BaseController
     flash[:danger] =  t ".not_found"
     redirect_to orders_url
   end
-  
+
   def find_order
     @order = Order.find_by id: params[:id]
 
@@ -29,5 +38,12 @@ class Admin::OrdersController < Admin::BaseController
 
     flash[:warning] = t ".not_found"
     redirect_to root_path
+  end
+
+  def check_status_order
+    return unless @order.canceled?
+
+    flash[:danger] =  "danger"
+    redirect_to admin_orders_path
   end
 end

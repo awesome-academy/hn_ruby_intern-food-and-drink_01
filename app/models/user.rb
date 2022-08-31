@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_many :orders, dependent: :destroy
   enum role: {admin: 0, customer: 1}
+  attr_accessor :notification_token
 
   USER_ATTRS = %w(name email password password_confirmation phone_num
                  address).freeze
@@ -21,10 +22,34 @@ class User < ApplicationRecord
                         length: {minimum: Settings.user.password.password_min},
                         allow_nil: true, if: :password
   has_secure_password
-  
+
+  class << self
+    def digest string
+      cost = if ActiveModel::SecurePassword.min_cost
+               BCrypt::Engine::MIN_COST
+             else
+               BCrypt::Engine.cost
+             end
+      BCrypt::Password.create string, cost: cost
+    end
+
+    def new_token
+      SecureRandom.urlsafe_base64
+    end
+  end
+
+  def send_mail_notify order
+    UserMailer.notification(order).deliver_now
+  end
+
   private
 
   def downcase_email
     email.downcase!
+  end
+
+  def create_activation_digest
+    self.activation_token = User.new_token
+    self.activation_digest = User.digest notification_token
   end
 end

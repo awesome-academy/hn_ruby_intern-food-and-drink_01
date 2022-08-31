@@ -5,5 +5,6 @@ class Product < ApplicationRecord
   belongs_to :category
 
   scope :asc_name, ->{order name: :asc}
+  scope :lastest, ->{order created_at: :desc}
   scope :newest, ->{order(created_at: :desc).limit Settings.product.limit_new}
 end

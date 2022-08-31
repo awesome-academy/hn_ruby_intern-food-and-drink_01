@@ -1,0 +1,6 @@
+<h1><%= "Notificaion from Food And Drink" %></h1>
+<p> "Hi" <%= @user.name %>,</p>
+
+<p> "We just have updated your order <%= @order.id %> to"<%= @order.status %>"</p>
+
+<%= link_to "see detail", order_url(id: @order.id) %>
