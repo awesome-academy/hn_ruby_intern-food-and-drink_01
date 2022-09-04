@@ -1,0 +1,21 @@
+<!-- Shop Sidebar End -->
+<div class="container">
+  <%= search_form_for [:admin, @q] do |f| %>
+    <div class="form-section">
+      <div class="col-3">
+        <%= f.search_field :name_cont, placeholder: "name of product" %>
+      </div>
+      <div class="col-3">
+        <%= f.number_field :price_money_gteq, placeholder: "min price" %>
+      </div>
+      <div class="col-3">
+        <%= f.number_field :price_money_lteq, placeholder: "max price" %>
+      </div>
+      <div class="col-3">
+        <%= f.label :category_id_eq, "Loai" %>
+        <%= f.select :category_id_eq, options_from_collection_for_select(Category.all, "id", "name", @q.category_id_eq), include_blank: true%>
+      </div>
+    </div>
+    <%= f.submit "search", class: "btn btn-small btn-info" %>
+  <% end %>
+</div>

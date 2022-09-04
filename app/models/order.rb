@@ -4,6 +4,14 @@ class Order < ApplicationRecord
 
   enum status: {pending: 0, accepted: 1, completed: 2, canceled: 3}
 
+  ransacker :status, formatter: proc {|v| statuses[v]} do |parent|
+    parent.table[:status]
+  end
+
+  ransacker :total_money, type: :integer do |p|
+    p.table[:total_money]
+  end
+
   ORDER_ATTRS = %w(name phone_num address note total_money).freeze
 
   validates :name,  presence: true,

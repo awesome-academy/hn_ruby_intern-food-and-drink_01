@@ -2,7 +2,7 @@
   <div> <%= render "admin/static_pages/sidebar" %> </div>
   <div class="account-manage-page">
   <%= link_to "New Product", new_admin_product_path, class: "btn btn-small btn-success"%>
-
+  <%= render "admin/products/search" %>
     <table class="rwd-table">
       <thead>
         <tr>
@@ -11,6 +11,7 @@
           <th>unit_price</th>
           <th>quantity</th>
           <th>size</th>
+          <th><%= sort_link(@q, :created_at, "Create")%></th>
           <th>Action</th>
         </tr>
       </thead>

@@ -1,6 +1,7 @@
 <div class="admin-page">
   <div> <%= render "admin/static_pages/sidebar" %> </div>
   <div class="account-manage-page">
+  <%= render "admin/orders/search" %>
     <table class="rwd-table">
       <thead>
         <tr>
@@ -11,7 +12,7 @@
           <th>note</th>
           <th>status</th>
           <th>Total money</th>
-          <th>Create</th>
+          <th><%= sort_link(@q, :created_at, "Create")%></th>
         </tr>
       </thead>
       <tbody>
