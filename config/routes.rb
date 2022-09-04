@@ -17,6 +17,7 @@ Rails.application.routes.draw do
       resources :users
       resources :orders, except: :destroy
       resources :products
+      resources :categories
     end
   end
 end
