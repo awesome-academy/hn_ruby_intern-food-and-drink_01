@@ -1,0 +1,21 @@
+<!-- Shop Sidebar End -->
+<div class="container">
+  <%= search_form_for [:admin, @q] do |f| %>
+    <div class="form-section">
+      <div class="col-3">
+        <%= f.search_field :name_or_address_or_note_cont, placeholder: "name or address or note" %>
+      </div>
+      <div class="col-3">
+        <%= f.label :status_eq, "Trang thai" %>
+        <%= f.select :status_eq, Order.statuses.keys, include_blank: true , class: "form-control"%>
+      </div>
+      <div class="col-3">
+        <%= f.number_field :total_money_gteq, placeholder: "min price" %>
+      </div>
+      <div class="col-3">
+        <%= f.number_field :total_money_lteq, placeholder: "max price" %>
+      </div>
+    </div>
+    <%= f.submit "search", class: "btn btn-small btn-info" %>
+  <% end %>
+</div>

@@ -2,7 +2,8 @@ class Admin::ProductsController < Admin::BaseController
   before_action :load_category_size, only: %i(new create edit)
   before_action :find_product, only: %i(edit update destroy)
   def index
-    @pagy, @products = pagy Product.includes(:sizes).lastest
+    @q = Product.lastest.ransack(params[:q])
+    @pagy, @products = pagy(@q.result)
   end
 
   def new

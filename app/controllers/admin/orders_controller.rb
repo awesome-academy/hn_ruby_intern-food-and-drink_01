@@ -3,7 +3,8 @@ class Admin::OrdersController < Admin::BaseController
   before_action :load_order_details, only: %i(show update)
   before_action :check_status_order, only: :update
   def index
-    @pagy, @orders = pagy Order.lastest_order
+    @q = Order.lastest_order.ransack(params[:q])
+    @pagy, @orders = pagy(@q.result)
   end
 
   def show; end
