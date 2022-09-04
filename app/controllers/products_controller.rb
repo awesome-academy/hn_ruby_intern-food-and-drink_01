@@ -1,7 +1,11 @@
 class ProductsController < ApplicationController
   def index
-    @pagy, @products = pagy Product.asc_name
-    @sizes = Size.asc_name
+
+    
+
+    @q = Product.asc_name.ransack(params[:q])
+    @pagy, @products = pagy(@q.result)
+    @sizes = Size.all
   end
 
   def show

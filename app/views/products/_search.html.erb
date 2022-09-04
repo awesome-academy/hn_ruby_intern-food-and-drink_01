@@ -1,0 +1,35 @@
+<!-- Shop Sidebar Start -->
+<div class="col-lg-3 col-md-4">
+  <%= search_form_for @q do |f| %>
+    <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3"> Find by name</span></h5>
+    <div class="bg-light p-4 mb-30">
+      <div class="form-section">
+        <%= f.search_field :name_cont, placeholder: "name of product" %>
+      </div>
+    </div>
+    <!-- Price Start -->
+    <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3"><%= t ".filter_price"%></span></h5>
+    <div class="bg-light p-4 mb-30">
+      <%= f.number_field :price_money_gteq, placeholder: "min price" %>
+      <%= f.number_field :price_money_lteq, placeholder: "max price" %>
+    </div>
+    <!-- Price End -->
+    <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3"> Find by category</span></h5>
+    <div class="bg-light p-4 mb-30">
+      <div class="form-section">
+        <%= f.select :category_id_eq, options_from_collection_for_select(Category.all, "id", "name", @q.category_id_eq), include_blank: true%>
+      </div>
+    </div>
+    <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3"> Find by size</span></h5>
+    <div class="bg-light p-4 mb-30">
+      <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+        <% Size.all.each do |size| %>
+          <%= check_box_tag('q[sizes_id_eq_any][]', size.id) %>
+          <%= size.size%>
+        <% end %>
+      </div>
+    </div>
+    <%= f.submit %>
+  <% end %>
+</div>
+<!-- Shop Sidebar End -->
