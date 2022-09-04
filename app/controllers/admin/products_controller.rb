@@ -34,16 +34,28 @@ class Admin::ProductsController < Admin::BaseController
 
   def destroy
     if @product.destroy
+<<<<<<< HEAD
       flash[:success] = t ".success"
     else
       flash[:danger] = t ".not_success"
+=======
+      flash[:success] = "success"
+    else
+      flash[:danger] = "danger"
+>>>>>>> admin add and index product
     end
     redirect_to admin_products_path
   end
 
   private
+<<<<<<< HEAD
   def product_params
     params.require(:product).permit(Product::PRODUCT_ATTRS, size_ids: [])
+=======
+
+  def product_params
+    params.require(:product).permit(:name, :unit_price, :description, :quantity, :category_id, :image , size_ids: [])
+>>>>>>> admin add and index product
   end
 
   def size_params
@@ -59,7 +71,11 @@ class Admin::ProductsController < Admin::BaseController
     @product = Product.find_by id: params[:id]
     return if @product
 
+<<<<<<< HEAD
     flash[:danger] = t ".not_product"
+=======
+    flash[:danger] = "no exist product"
+>>>>>>> admin add and index product
     redirect_to admin_products_path
   end
 end
