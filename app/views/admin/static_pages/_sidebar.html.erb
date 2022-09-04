@@ -2,6 +2,9 @@
    <base href="admin">
    <h3 class="title">Menu</h3>
    <div class="sidebar-button menu" >
+      <span class="fa fa-shopping-cart"></span> <%= link_to "Quản lý San Pham", admin_products_path, class: "sidebar-button"%>
+   </div>
+   <div class="sidebar-button menu" >
       <span class="fa fa-shopping-cart"></span> <%= link_to "Quản lý Order", admin_orders_path, class: "sidebar-button"%>
    </div>
    <%= link_to "Đăng xuất", logout_path, method: :delete, class: "sidebar-button"%>

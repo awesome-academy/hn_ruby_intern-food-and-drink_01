@@ -5,7 +5,7 @@ class CreateProducts < ActiveRecord::Migration[6.1]
       t.decimal :unit_price, precision: 10, scale: 2
       t.string :thumbnail
       t.text :description
-      t.integer :quantity
+      
 
       t.references :category, null: false, foreign_key: true
 
