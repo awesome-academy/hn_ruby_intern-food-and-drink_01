@@ -63,6 +63,7 @@ class CartsController < ApplicationController
   end
 
   def add_item product_size, num
+
     if @carts.key? product_size.id.to_s
       @carts[product_size.id.to_s] += num
     else

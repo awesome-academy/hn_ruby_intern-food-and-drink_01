@@ -31,7 +31,7 @@ class OrdersController < ApplicationController
   end
 
   def update
-    if @order.update(reason: params[:reason], status: :canceled)
+    if @order.update(reason: params_reason[:reason], status: :canceled)
       flash[:success] = "Huy don hang thanh cong"
     else
       flash.now[:danger] = "Don hang da duoc giao"

@@ -13,13 +13,14 @@
         <h3><%= @product.name %></h3>
         <h3 class="font-weight-semi-bold mb-4"><%=number_to_currency @product.unit_price %></h3>
         <p class="mb-4"><%= @product.description %></p>
+        <%= @product.quantity %>
         <div class="d-flex align-items-center mb-4 pt-2">
           <div class="input-group quantity mr-3" style="width: 130px;">
           <%= @product.quantity %>
             <%= form_with url: carts_path(product_id: @product.id), method: :post do |f| %>
-              <strong class="text-dark mr-3"><%= t ".size" %></strong>
-              <%= f.collection_radio_buttons :size_id, @product.sizes, :id, :size %>
-              <%= f.number_field :num, value: 1, class: "form-control bg-secondary border-0 text-center", min: 1 %>
+                <strong class="text-dark mr-3"><%= t ".size" %></strong>
+                <%= f.collection_radio_buttons :size_id, @product.sizes, :id, :size %>
+              <%= f.number_field :num, value: 1, class: "form-control bg-secondary border-0 text-center", min: 1, max: @product.quantity %>
               <%= f.submit "Add to Cart", class: "btn btn-primary" %>
             <% end %>
           </div>
