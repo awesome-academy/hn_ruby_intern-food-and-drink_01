@@ -22,4 +22,28 @@ class Order < ApplicationRecord
             length: {in: Settings.user.address.address_range_length}
 
   scope :lastest_order, ->{order created_at: :desc}
+
+  def handle_order order_params
+    ActiveRecord::Base.transaction do
+      update!(status: order_params["status"])
+      return true unless completed?
+
+      ActiveRecord::Base.transaction(requires_new: true) do
+        order_details.each do |order_detail|
+          new_quantity = order_detail.product_size.product.quantity - order_detail.num
+          update_order order_detail, new_quantity
+          raise ActiveRecord::Rollback if new_quantity.negative?
+        end
+      end
+    end
+  rescue ActiveRecord::RecordInvalid => e
+    errors.add(:base, e.message)
+    false
+  end
+
+  private
+
+  def update_order order_detail, new_quantity
+    order_detail.product_size.product.update!(quantity: new_quantity)
+  end
 end

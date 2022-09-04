@@ -10,7 +10,7 @@ class Admin::OrdersController < Admin::BaseController
   def show; end
 
   def update
-    if @order.update(order_params)
+    if @order.handle_order order_params
       current_user.send_mail_notify @order
       flash[:success] = "Thay doi thanh cong"
     else

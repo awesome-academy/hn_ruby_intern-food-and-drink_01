@@ -1,7 +1,7 @@
 <div class="admin-page">
   <div> <%= render "admin/static_pages/sidebar" %> </div>
   <div class="account-manage-page">
-    <% unless @order.canceled? %>
+    <% unless @order.canceled? || @order.completed? %>
       <%= form_for [:admin,@order] do |f| %>
         <%= f.select :status, Order.statuses.keys , class: "form-control"%>
         <%= f.submit "Change status", class: "btn btn-primary " %>

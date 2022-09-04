@@ -17,7 +17,7 @@ module CartsHelper
   def clean_carts
     user_id = session[:user_id]
     session["cart_#{user_id}"].each do |key, _value|
-      session["cart_#{user_id}"].delete key unless Product.find_by id: key
+      session["cart_#{user_id}"].delete key unless ProductSize.find_by id: key.to_i
     end
   end
 
@@ -38,7 +38,7 @@ module CartsHelper
       product_id = item.id
       quantity = @carts[product_id.to_s]
       if quantity > item.product.quantity
-        falsh[:danger] = t("hepler.product_stock", prod_name: item.product.name)
+        flash[:danger] = t("hepler.product_stock", prod_name: item.product.name)
         redirect_to root_path
       end
     end
