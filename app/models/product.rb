@@ -6,6 +6,10 @@ class Product < ApplicationRecord
   PRODUCT_ATTRS = %w( name unit_price description quantity
                       category_id image).freeze
 
+  ransacker :price_money, type: :integer do |p|
+    p.table[:unit_price]
+  end
+
   scope :asc_name, ->{order name: :asc}
   scope :desc_name, ->{order name: :desc}
   scope :lastest, ->{order created_at: :desc}
