@@ -123,6 +123,10 @@ en:
       number: "Number"
       size: "Size"
       price: "Price"
+      destroy: "Destroy Order"
+      reason: "Reason"
+      close: "Close"
+      save: "Save"
     index:
       code: "Code"
       name: "Name User"
@@ -130,6 +134,9 @@ en:
       create_at: "Create at"
       status: "Status"
       action: "Action"
+    update:
+      cancle: "Cancle successfuly"
+      cancle_fail: "Cancle fails"
   hepler:
     product_stock: Product %{prod_name} is out of stock, please update quantity
   admin:
