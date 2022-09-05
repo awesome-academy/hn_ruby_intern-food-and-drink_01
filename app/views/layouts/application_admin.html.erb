@@ -7,10 +7,10 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "application_admin", media: "all", "data-turbolinks-track": "reload" %>
     <%= javascript_pack_tag "application_admin", "data-turbolinks-track": "reload" %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" crossorigin="anonymous">
   </head>
   <body>
     <div>
-      <%= render "layouts/header" %>
       <% flash.each do |message_type, message| %>
         <div class="alert alert-<%= message_type %>"><%= message %></div>
       <% end %>

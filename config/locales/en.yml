@@ -132,3 +132,24 @@ en:
       action: "Action"
   hepler:
     product_stock: Product %{prod_name} is out of stock, please update quantity
+  admin:
+    orders:
+      index:
+        code: "Code"
+        name: "Name"
+        phone: "Phone Number"
+        address: "Address"
+        note: "Note"
+        status: "Status"
+        total: "Total Money"
+        create: "Create at"
+        info: "Info"
+      show:
+        image: "Image"
+        name: "Name"
+        number: "Number"
+        size: "Size"
+        price: "Price"
+    static_pages:
+      sidebar:
+        menu: "Menu"
