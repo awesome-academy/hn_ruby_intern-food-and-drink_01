@@ -5,10 +5,10 @@
       <div class="edit-account">
         <p class="form-title">Thêm đường dẫn</p>
         <%= form_for [:admin, @category] do |f| %>
-
+<%= render "admin/shared/error_messages", object: f.object%>
           <%= f.label :name, "Teen" %>
           <%= f.text_field :name, class: "form-control" %>
-          <%= f.submit "Add", class: "submit-btn" %>
+          <%= f.submit "Update", class: "submit-btn" %>
         <% end %>
       </div>
     </div>

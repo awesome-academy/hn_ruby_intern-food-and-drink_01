@@ -2,7 +2,7 @@ class CartsController < ApplicationController
   before_action :logged_in_user, only: %i(index create)
   before_action :load_product_size_by_foreign_key, only: %i(create)
   before_action :init_cart
-  before_action :load_product_sizes, only: :index
+  before_action :load_product_sizes, only: %i(index update destroy)
   before_action :load_product_size_by_primary_key, only: %i(update destroy)
 
   def index; end
@@ -23,7 +23,10 @@ class CartsController < ApplicationController
     else
       flash[:danger] = t ".fail"
     end
-    redirect_to carts_path
+    respond_to do |format|
+      format.html {redirect_to carts_path }
+      format.js
+    end
   end
 
   def destroy
@@ -32,10 +35,14 @@ class CartsController < ApplicationController
       flash[:success] = t ".success"
       user_id = session[:user_id]
       session["cart_#{user_id}"] = @carts
+      load_product_sizes
     else
-      falsh[:danger] = t ".fail"
+      flash[:danger] = t ".fail"
     end
-    redirect_to carts_path
+    respond_to do |format|
+      format.html {redirect_to carts_path }
+      format.js
+    end
   end
 
   private
@@ -77,7 +84,7 @@ class CartsController < ApplicationController
       @carts[params[:id]] = @num
       user_id = session[:user_id]
       session["cart_#{user_id}"] = @carts
-      flash[:success] = t ".success"
+      # flash[:success] = t ".success"
     else
       flash[:danger] = t ".fail"
     end

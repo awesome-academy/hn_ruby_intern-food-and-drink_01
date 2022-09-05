@@ -37,7 +37,7 @@
     return false
   })
 
-  
+
 
   // Product Quantity
   $('.quantity button').on('click', function () {
@@ -45,21 +45,21 @@
     var oldValue = button
       .parent()
       .parent()
-      .find('input')
+      .find('#number_product')
       .val()
     if (button.hasClass('btn-plus')) {
       var newVal = parseFloat(oldValue) + 1
     } else {
-      if (oldValue > 0) {
+      if (oldValue > 1) {
         var newVal = parseFloat(oldValue) - 1
       } else {
-        newVal = 0
+        newVal = 1
       }
     }
     button
       .parent()
       .parent()
-      .find('input')
+      .find('#number_product')
       .val(newVal)
   })
 })(jQuery)

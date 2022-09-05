@@ -122,6 +122,8 @@ vi:
       product: "Các sản phẩm"
       total: "Tổng cộng"
       submit_pay: "Đặt hàng"
+      payment: "Payment"
+      place_order: "Place Order"
     show:
       not_found: "Không tìm thấy sanr phẩm"
       image: "Hình ảnh"
@@ -140,6 +142,9 @@ vi:
       create_at: "Ngày tạo"
       status: "Trạng thái"
       action: "Hoạt động"
+    update:
+      cancle: "Cancle successfuly"
+      cancle_fail: "Cancle fails"
   user_mailer:
     notification:
       sub: "Thông báo"

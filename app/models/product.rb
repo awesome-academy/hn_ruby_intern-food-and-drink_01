@@ -10,6 +10,13 @@ class Product < ApplicationRecord
     p.table[:unit_price]
   end
 
+  validates :name, presence: true,
+            length: {maximum: 40}
+  validates :unit_price, presence: true, numericality: {greater_than_or_equal_to: Settings.min_quantity}
+  validates :description, presence: true
+  validates :image, presence: true
+  validates :quantity, presence: true, numericality: {greater_than_or_equal_to: Settings.min_quantity,
+    only_integer: true}
   scope :asc_name, ->{order name: :asc}
   scope :desc_name, ->{order name: :desc}
   scope :lastest, ->{order created_at: :desc}

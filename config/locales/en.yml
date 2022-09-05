@@ -42,11 +42,6 @@ en:
       featured: "Featured Products"
       product_name: "Product name"
       recent: "Recent product"
-  admin:
-    static_pages:
-      index:
-        not_admin: "You are not admin"
-        title_admin: Static page by Admin site
   sessions:
     create:
       invalid: "invalid_email_password_combination"
@@ -91,7 +86,7 @@ en:
       name_product: "Name of product"
       min: "Min price"
       max: "Max price"
-      
+
   carts:
     create:
       please_login: "Please login"

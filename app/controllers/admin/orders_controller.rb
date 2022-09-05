@@ -7,7 +7,9 @@ class Admin::OrdersController < Admin::BaseController
     @pagy, @orders = pagy(@q.result)
   end
 
-  def show; end
+  def show
+    respond_to :js
+  end
 
   def update
     if @order.handle_order order_params
@@ -15,7 +17,6 @@ class Admin::OrdersController < Admin::BaseController
     else
       flash.now[:danger] = t ".update_fail"
     end
-    redirect_to admin_orders_path
   end
   private
 

@@ -13,6 +13,7 @@
         <h3><%= @product.name %></h3>
         <h3 class="font-weight-semi-bold mb-4"><%=number_to_currency @product.unit_price %></h3>
         <p class="mb-4"><%= @product.description %></p>
+        <strong class="text-dark mr-3">Quantity:</strong>
         <%= @product.quantity %>
         <div class="d-flex align-items-center mb-4 pt-2">
           <div class="input-group quantity mr-3" style="width: 130px;">

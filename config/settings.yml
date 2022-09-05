@@ -27,3 +27,4 @@ product:
   limit_new: 10
 carts:
   min_quantity: 0
+min_quantity: 1

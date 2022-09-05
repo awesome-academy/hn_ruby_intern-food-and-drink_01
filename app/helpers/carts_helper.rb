@@ -6,8 +6,13 @@ module CartsHelper
     end
   end
 
-  def total_price_product product_size
-    product_size.product.unit_price * @carts[product_size.id.to_s].to_i
+  def total_price_product id
+    if product_size = ProductSize.find_by(id: id)
+      product_size.product.unit_price * @carts[product_size.id.to_s].to_i
+    else
+      flash[:danger] = I18n.t ".carts.danger_book"
+      redirect_to carts_path
+    end
   end
 
   def count_carts

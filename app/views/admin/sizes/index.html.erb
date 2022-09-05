@@ -1,26 +1,26 @@
 <div class="admin-page">
   <div> <%= render "admin/static_pages/sidebar" %> </div>
   <div class="account-manage-page">
-  <%= link_to "New Product", new_admin_category_path, class: "btn btn-small btn-success"%>
+  <%= link_to "New Size", new_admin_size_path, class: "btn btn-small btn-success"%>
     <table class="rwd-table">
       <thead>
         <tr>
           <th>Ma</th>
-          <th>Category</th>
+          <th>Size</th>
           <th>Action</th>
         </tr>
       </thead>
       <tbody>
-        <% @categories.each do |category| %>
+        <% @sizes.each do |size| %>
           <tr>
-            <td><%= category.id %></td>
-            <td><%= category.name %></td>
+            <td><%= size.id %></td>
+            <td><%= size.size %></td>
             <td>
               <div class="action-btn">
-                <%= link_to edit_admin_category_path(category) do %>
+                <%= link_to edit_admin_size_path(size) do %>
                   <span class="fa fa-edit"></span>
                 <% end %>
-                <%= link_to admin_category_path(category), method: :delete, data: { confirm: "Bạn có chắc là muốn xóa không?" } do %>
+                <%= link_to admin_size_path(size), method: :delete, data: { confirm: "Bạn có chắc là muốn xóa không?" } do %>
                   <span class="fa fa-trash"></span>
                 <% end %>
               </div>
