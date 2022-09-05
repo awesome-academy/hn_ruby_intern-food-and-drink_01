@@ -8,8 +8,8 @@
     </td>
     <td class="align-middle"><%= total_price_product product_size %></td>
     <td class="align-middle">
-      <%= f.button type: :submit, class: "product-delete-btn" do %>
-        <%= "edit"%>
+      <%= f.button type: :submit, class: "btn btn-sm btn-warning" do %>
+        <span class="fa fa-edit"></span>
       <% end %>
       <%= link_to cart_path(id: product_size.id), method: :delete,
         data: {confirm: t(".confirm_delete")} do %>

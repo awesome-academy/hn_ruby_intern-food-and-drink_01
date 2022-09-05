@@ -40,11 +40,6 @@ en:
       featured: "Featured Products"
       product_name: "Product name"
       recent: "Recent product"
-  admin:
-    static_pages:
-      index:
-        not_admin: "You are not admin"
-        title_admin: Static page by Admin site
   sessions:
     create:
       invalid: "invalid_email_password_combination"
@@ -129,5 +124,15 @@ en:
       create_at: "Create at"
       status: "Status"
       action: "Action"
+    update:
+      danger: "something changed"
   hepler:
     product_stock: Product %{prod_name} is out of stock, please update quantity
+  admin:
+    static_pages:
+      index:
+        not_admin: "You are not admin"
+        title_admin: Static page by Admin site
+    shared:
+      error_messages:
+        error: "Error you need fix to create a product in the feature..."

@@ -6,6 +6,7 @@ class OrdersController < ApplicationController
   before_action :find_order, only: %i(show update)
   before_action :load_order_details, only: :show
   before_action :check_status_order, only: :update
+  before_action :check_carts, only: :new
 
   def index
     @pagy, @orders = pagy Order.lastest_order
@@ -93,5 +94,12 @@ class OrdersController < ApplicationController
 
     flash[:danger] = t ".danger"
     redirect_to orders_path
+  end
+
+  def check_carts
+    return unless @carts.blank?
+
+    flash[:danger] = "cart is blank"
+    redirect_to root_path
   end
 end

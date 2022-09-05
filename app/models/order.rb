@@ -28,17 +28,21 @@ class Order < ApplicationRecord
       update!(status: order_params["status"])
       return true unless completed?
 
-      ActiveRecord::Base.transaction(requires_new: true) do
+
         order_details.each do |order_detail|
           new_quantity = order_detail.product_size.product.quantity - order_detail.num
           update_order order_detail, new_quantity
           raise ActiveRecord::Rollback if new_quantity.negative?
         end
-      end
+
     end
-  rescue ActiveRecord::RecordInvalid => e
-    errors.add(:base, e.message)
-    false
+
+
+
+  rescue ActiveRecord::RecordInvalid
+
+    flash[:danger] = "false quantity"
+    redirect_to admin_orders_path
   end
 
   private

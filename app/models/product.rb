@@ -8,6 +8,11 @@ class Product < ApplicationRecord
     p.table[:unit_price]
   end
 
+  validates :name, presence: true,
+            length: {maximum: 40}
+  validates :unit_price, presence: true
+  validates :description, presence: true
+  validates :image, presence:true
   scope :asc_name, ->{order name: :asc}
   scope :lastest, ->{order created_at: :desc}
   scope :newest, ->{order(created_at: :desc).limit Settings.product.limit_new}

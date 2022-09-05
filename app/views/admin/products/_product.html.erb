@@ -1,7 +1,7 @@
 <tr>
   <td><%= image_tag product.image, style: "width: 50px;"%></td>
   <td><%= product.name %></td>
-  <td><%= product.unit_price %></td>
+  <td><%= number_to_currency product.unit_price %></td>
   <td><%= product.quantity %></td>
   <td><%= get_all_size product %></td>
   <td><%= product.created_at %></td>
