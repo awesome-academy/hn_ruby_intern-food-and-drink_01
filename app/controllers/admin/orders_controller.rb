@@ -1,13 +1,21 @@
 class Admin::OrdersController < Admin::BaseController
-  before_action :find_order, only: :show
-  before_action :load_order_details, only: :show
-
+  before_action :find_order, only: %i(show update)
+  before_action :load_order_details, only: %i(show update)
+  before_action :check_status_order, only: :update
   def index
     @pagy, @orders = pagy Order.lastest_order
   end
 
   def show; end
 
+  def update
+    if @order.handle_order order_params
+      flash[:success] = t ".update_success"
+    else
+      flash.now[:danger] = t ".update_fail"
+    end
+    redirect_to admin_orders_path
+  end
   private
 
   def order_params
@@ -29,5 +37,12 @@ class Admin::OrdersController < Admin::BaseController
 
     flash[:warning] = t ".not_found"
     redirect_to root_path
+  end
+
+  def check_status_order
+    return if @order.pending? || @order.accepted?
+
+    flash[:danger] = t ".danger"
+    redirect_to admin_orders_path
   end
 end

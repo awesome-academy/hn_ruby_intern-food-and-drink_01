@@ -133,6 +133,13 @@ vi:
       create_at: "Ngày tạo"
       status: "Trạng thái"
       action: "Hoạt động"
+  user_mailer:
+    notification:
+      sub: "Thông báo"
+      title: "Thông báo từ Food And Drink "
+      hi: "Xin chào "
+      action: "Chúng tôi vừa mới cập nhật đơn hàng của bạn thành "
+      detail: "see detail"
   hepler:
     product_stock: "Product %{prod_name} is out of stock, please update quantity"
   admin:
@@ -153,6 +160,11 @@ vi:
         number: "Số lượng"
         size: "Size"
         price: "Giá"
+      update:
+        update_success: "Thay đổi thành công"
+        update_fail: "Thất bại"
     static_pages:
+      index:
+        not_admin: "Bạn không phải là admin"
       sidebar:
         menu: "Menu"
