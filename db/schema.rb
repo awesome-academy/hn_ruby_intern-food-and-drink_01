@@ -88,7 +88,6 @@ ActiveRecord::Schema.define(version: 2022_08_26_070619) do
     t.decimal "unit_price", precision: 10, scale: 2
     t.string "thumbnail"
     t.text "description"
-    t.integer "quantity"
     t.bigint "category_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

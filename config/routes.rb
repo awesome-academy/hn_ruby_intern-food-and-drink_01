@@ -16,6 +16,7 @@ Rails.application.routes.draw do
       resources :static_pages
       resources :users
       resources :orders, except: :destroy
+      resources :products
     end
   end
 end

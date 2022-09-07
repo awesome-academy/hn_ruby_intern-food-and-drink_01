@@ -2,7 +2,10 @@
    <base href="admin">
    <h3 class="title"><%= t ".menu" %></h3>
    <div class="sidebar-button menu" >
-      <span class="fa fa-shopping-cart"></span> <%= link_to "Quản lý Order", admin_orders_path, class: "sidebar-button"%>
+      <span class="fa fa-shopping-cart"></span> <%= link_to t(".manage_product"), admin_products_path, class: "sidebar-button"%>
    </div>
-   <%= link_to "Đăng xuất", logout_path, method: :delete, class: "sidebar-button"%>
+   <div class="sidebar-button menu" >
+      <span class="fa fa-shopping-cart"></span> <%= link_to t(".manage_order"), admin_orders_path, class: "sidebar-button"%>
+   </div>
+   <%= link_to t(".logout"), logout_path, method: :delete, class: "sidebar-button"%>
 </div>
