@@ -77,13 +77,21 @@ en:
       error: "error"
   products:
     index:
-      filter_price: "Filter by price"
-      filter_size: "Filter by size"
       lastest: "Lastest"
-      popular: "popularity"
-      best_rating: "Best rating"
+      asc: "A -> Z"
+      desc: "Z -> A"
+      sort: "Sorting"
     show:
       size: "Size: "
+    search:
+      filter_price: "Filter by price"
+      filter_size: "Filter by size"
+      filter_category: "Find by category"
+      filter_name: "Find by name"
+      name_product: "Name of product"
+      min: "Min price"
+      max: "Max price"
+      
   carts:
     create:
       please_login: "Please login"

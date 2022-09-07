@@ -67,17 +67,11 @@ end
                                     content_type: "image/jpg")
 end
 
-Size.create!(
-  size: 1
-)
-
-Size.create!(
-  size: 2
-)
-
-Size.create!(
-  size: 3
-)
+3.times do |n|
+  Size.create!(
+    size: n+1
+  )
+end
 
 20.times do
   price = Faker::Commerce.price(range: 1..100.0)

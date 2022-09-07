@@ -59,7 +59,7 @@ class Admin::ProductsController < Admin::BaseController
     @product = Product.find_by id: params[:id]
     return if @product
 
-    flash[:danger] = t "not_product"
+    flash[:danger] = t ".not_product"
     redirect_to admin_products_path
   end
 end
