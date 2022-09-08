@@ -1,7 +1,12 @@
 class ProductsController < ApplicationController
   def index
-    @pagy, @products = pagy Product.asc_name
-    @sizes = Size.asc_name
+    @q = Product.asc_name.ransack(params[:q])
+    if params[:sort]
+      @pagy, @products = sort_by params[:sort]
+    else
+      @pagy, @products = pagy(@q.result)
+      @sizes = Size.all
+    end
   end
 
   def show
@@ -10,5 +15,26 @@ class ProductsController < ApplicationController
 
     flash[:danger] = t ".not_found"
     redirect_to root_path
+  end
+
+  def sort
+    if params[:sort]
+      @pagy, @products = sort_by params[:sort]
+    else
+      redirect_to root_path
+    end
+  end
+
+  private
+
+  def sort_by params
+    case params.to_sym
+    when :lastest
+      pagy Product.lastest
+    when :asc_name
+      pagy Product.asc_name
+    when :desc_name
+      pagy Product.desc_name
+    end
   end
 end

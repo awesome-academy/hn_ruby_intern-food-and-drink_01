@@ -7,6 +7,7 @@ class Product < ApplicationRecord
                       category_id image).freeze
 
   scope :asc_name, ->{order name: :asc}
+  scope :desc_name, ->{order name: :desc}
   scope :lastest, ->{order created_at: :desc}
   scope :newest, ->{order(created_at: :desc).limit Settings.product.limit_new}
 end

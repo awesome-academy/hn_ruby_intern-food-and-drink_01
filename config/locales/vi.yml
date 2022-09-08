@@ -76,13 +76,20 @@ vi:
       error: "lỗi"
   products:
     index:
-      filter_price: "Lọc theo giá"
-      filter_size: "Lọc theo size"
       lastest: "Mới nhất"
-      popular: "Phổ biến"
-      best_rating: "Yêu thích"
+      asc: "A -> Z"
+      desc: "Z -> A"
+      sort: "Sắp xếp"
     show:
       size: "Kích thước: "
+    search:
+      filter_price: "Lọc theo giá"
+      filter_size: "Lọc theo size"
+      filter_category: "Lọc theo loại"
+      filter_name: "Lọc theo tên"
+      name_product: "Nhập tên sản phẩm"
+      min: "Giá thấp nhất"
+      max: "Giá cao nhất"
   carts:
     create:
       please_login: "Hãy đăng nhập trước"
