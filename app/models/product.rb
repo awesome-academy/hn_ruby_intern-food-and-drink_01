@@ -6,6 +6,13 @@ class Product < ApplicationRecord
   PRODUCT_ATTRS = %w( name unit_price description quantity
                       category_id image).freeze
 
+  validates :name,  presence: true,
+                    length: {maximum: Settings.product.name.name_max_length}
+  validates :unit_price, presence: true, numericality: {only_integer: true}
+  validates :description, presence: true,
+                          length: {maximum: Settings.product.description.length}
+  validates :image, presence: true
+
   scope :asc_name, ->{order name: :asc}
   scope :desc_name, ->{order name: :desc}
   scope :lastest, ->{order created_at: :desc}
