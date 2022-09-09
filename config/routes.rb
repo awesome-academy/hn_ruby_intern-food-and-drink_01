@@ -12,11 +12,12 @@ Rails.application.routes.draw do
     resources :orders, except: :destroy
 
     namespace :admin do
-      root to: "static_pages#index"
+      root to: "products#index"
       resources :static_pages
       resources :users
       resources :orders, except: :destroy
       resources :products
+      resources :categories
     end
   end
 end

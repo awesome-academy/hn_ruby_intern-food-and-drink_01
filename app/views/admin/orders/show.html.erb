@@ -1,28 +1,25 @@
-<div class="admin-page">
-  <div> <%= render "admin/static_pages/sidebar" %> </div>
-  <div class="account-manage-page">
-    <% if @order.pending? || @order.accepted? %>
-      <%= form_for [:admin,@order] do |f| %>
-        <%= f.select :status, Order.statuses.keys , class: "form-control"%>
-        <%= f.submit "Change status", class: "btn btn-primary " %>
-      <% end %>
-    <% else %>
-      <p><%= @order.reason %></p>
+<div class="account-manage-page">
+  <% if @order.pending? || @order.accepted? %>
+    <%= form_for [:admin,@order] do |f| %>
+      <%= f.select :status, Order.statuses.keys , class: "form-control"%>
+      <%= f.submit "Change status", class: "btn btn-primary " %>
     <% end %>
-    <table class="rwd-table">
-      <thead>
-        <tr>
-          <th><%= t ".image" %></th>
-          <th><%= t ".name" %></th>
-          <th><%= t ".number" %></th>
-          <th><%= t ".size" %></th>
-          <th><%= t ".price" %></th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <%= render partial: "order_detail", collection: @order_details %>
-      </tbody>
-    </table>
-  </div>
+  <% else %>
+    <p><%= @order.reason %></p>
+  <% end %>
+  <table class="rwd-table">
+    <thead>
+      <tr>
+        <th><%= t ".image" %></th>
+        <th><%= t ".name" %></th>
+        <th><%= t ".number" %></th>
+        <th><%= t ".size" %></th>
+        <th><%= t ".price" %></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render partial: "order_detail", collection: @order_details %>
+    </tbody>
+  </table>
 </div>
