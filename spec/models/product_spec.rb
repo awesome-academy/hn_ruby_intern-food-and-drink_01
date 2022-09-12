@@ -15,6 +15,14 @@ RSpec.describe Product, type: :model do
       it { should validate_presence_of property }
       end
     end
+
+    context "validate length of name" do
+      it { should validate_length_of(:name).is_at_most(Settings.product.name.name_max_length)}
+    end
+
+    context "validate length of description" do
+      it { should validate_length_of(:description).is_at_most(Settings.product.description.length)}
+    end
   end
 
   describe "scope" do
