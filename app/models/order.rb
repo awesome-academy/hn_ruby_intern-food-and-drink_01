@@ -31,9 +31,8 @@ class Order < ApplicationRecord
         raise ActiveRecord::Rollback if new_quan.negative?
       end
     end
-  rescue ActiveRecord::RecordInvalid => e
-    errors.add(:base, e.message)
-    false
+  rescue StandardError => e
+    "ERROR: #{e.message}"
   end
 
   private
