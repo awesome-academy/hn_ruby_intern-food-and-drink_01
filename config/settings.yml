@@ -28,5 +28,9 @@ admin:
   category: 8
 product:
   limit_new: 10
+  name:
+    name_max_length: 40
+  description:
+    length: 200
 carts:
   min_quantity: 0
