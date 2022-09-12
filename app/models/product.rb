@@ -8,7 +8,7 @@ class Product < ApplicationRecord
 
   validates :name,  presence: true,
                     length: {maximum: Settings.product.name.name_max_length}
-  validates :unit_price, presence: true, numericality: {only_integer: true}
+  validates :unit_price, presence: true
   validates :description, presence: true,
                           length: {maximum: Settings.product.description.length}
   validates :image, presence: true

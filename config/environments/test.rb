@@ -57,4 +57,14 @@ Rails.application.configure do
 
   # Annotate rendered view with file names.
   # config.action_view.annotate_rendered_view_with_filenames = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.default_url_options = {host: ENV["host"]}
+  config.action_mailer.smtp_settings = {
+    user_name: ENV["mail_user_name"],
+    password: ENV["mail_user_password"],
+    address: ENV["mail_address"],
+    port: ENV["mail_port"],
+    authentication: :cram_md5,
+    enable_starttls_auto: true
+  }
 end
