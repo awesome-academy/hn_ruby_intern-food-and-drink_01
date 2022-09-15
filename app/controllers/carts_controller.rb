@@ -1,5 +1,5 @@
 class CartsController < ApplicationController
-  before_action :logged_in_user, only: %i(index create)
+  before_action :authenticate_user!, only: %i(index create)
   before_action :load_product_size_by_foreign_key, only: %i(create)
   before_action :init_cart
   before_action :load_product_sizes, only: :index

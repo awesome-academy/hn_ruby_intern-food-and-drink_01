@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  devise :database_authenticatable, :registerable, :confirmable,
+         :recoverable, :rememberable, :validatable
   has_many :orders, dependent: :destroy
   enum role: {admin: 0, customer: 1}
 
@@ -21,7 +23,6 @@ class User < ApplicationRecord
   validates :password,  presence: true,
                         length: {minimum: Settings.user.password.password_min},
                         allow_nil: true, if: :password
-  has_secure_password
 
   scope :name_asc, ->{order name: :asc}
 
