@@ -1,5 +1,4 @@
 class Admin::BaseController < ApplicationController
-  include SessionsHelper
   include ProductsHelper
   layout Settings.admin.layouts.link
   before_action :check_role_user

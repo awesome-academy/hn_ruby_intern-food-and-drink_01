@@ -1,0 +1,105 @@
+# Additional translations at https://github.com/heartcombo/devise/wiki/I18n
+
+en:
+  sign_up: "Đăng ký"
+  log_in: "Đăng nhập"
+  devise:
+    confirmations:
+      new:
+        resend_password: "Xác nhận email"
+      confirmed: "Địa chỉ email của bạn đã được xác nhận thành công."
+      send_instructions: "Bạn sẽ nhận được một email với hướng dẫn về cách xác nhận địa chỉ email của bạn trong vài phút."
+      send_paranoid_instructions: "Nếu địa chỉ email của bạn tồn tại trong cơ sở dữ liệu của chúng tôi, bạn sẽ nhận được email có hướng dẫn cách xác nhận địa chỉ email của bạn trong vài phút."
+    failure:
+      already_authenticated: "Bạn đã đăng nhập."
+      inactive: "Tài khoản của bạn chưa được kich hoạt."
+      invalid: "%{authentication_keys} hoặc mật khẩu không hợp lệ ."
+      locked: "Tài khoản của bạn đã bị khóa."
+      last_attempt: "Bạn còn một lần thử nữa trước khi tài khoản của bạn bị khóa."
+      not_found_in_database: "%{authentication_keys} hoặc mật khẩu không hợp lệ ."
+      timeout: "Phiên của bạn đã hết hạn. Vui lòng đăng nhập lại để tiếp tục."
+      unauthenticated: "Bạn cần đăng nhập hoặc đăng ký trước khi tiếp tục."
+      unconfirmed: "Bạn phải xác nhận địa chỉ email của mình trước khi tiếp tục."
+    mailer:
+      confirmation_instructions:
+        welcome: "Chào mừng"
+        confirm_email: "Bạn có thể xác nhận email tài khoản của mình thông qua liên kết bên dưới:"
+        confirm_account: "Xác nhận tài khoản của tôi"
+        subject: "Xác nhận hướng dẫn"
+      reset_password_instructions:
+        hello: "Xin chào"
+        someone_change: "Ai đó đã yêu cầu một liên kết để thay đổi mật khẩu của bạn. Bạn có thể làm điều này thông qua liên kết dưới đây."
+        change_password: "Thay đổi mật khẩu của tôi"
+        ignore_email: "Nếu bạn không yêu cầu điều này, vui lòng bỏ qua email này."
+        not_change: "Mật khẩu của bạn sẽ không thay đổi cho đến khi bạn truy cập vào liên kết ở trên và tạo một mật khẩu mới."
+        subject: "Đặt lại mật khẩu"
+      unlock_instructions:
+        subject: "Unlock instructions"
+      email_changed:
+        subject: "Email Changed"
+      password_change:
+        hello: "Xin chào"
+        notify_change: "Chúng tôi đang liên hệ với bạn để thông báo rằng mật khẩu của bạn đã được thay đổi."
+        subject: "Mật khẩu đã được thay đổi"
+    omniauth_callbacks:
+      failure: "Không thể xác thực bạn từ %{kind} bởi vì \"%{reason}\"."
+      success: "Đã xác thực thành công %{kind} tài khoản."
+    passwords:
+      new:
+        title: "Quên mật khẩu?"
+        send_reset: "Gửi cho tôi hướng dẫn đặt lại mật khẩu"
+      edit:
+        title: "Thay đổi mật khẩu của bạn"
+        new_password: "Mật khẩu mới"
+        confirm: "Xác nhận mật khẩu mới"
+        min_characters: "ký tự tối thiểu "
+        btn_change: "Thay đổi mật khẩu"
+      no_token: "Bạn không thể truy cập trang này nếu không nhận được email đặt lại mật khẩu. Nếu bạn đến từ email đặt lại mật khẩu, hãy đảm bảo rằng bạn đã sử dụng URL đầy đủ được cung cấp."
+      send_instructions: "Bạn sẽ nhận được email hướng dẫn về cách đặt lại mật khẩu sau vài phút."
+      send_paranoid_instructions: "Nếu địa chỉ email của bạn tồn tại trong cơ sở dữ liệu của chúng tôi, bạn sẽ nhận được liên kết khôi phục mật khẩu tại địa chỉ email của mình sau vài phút."
+      updated: "Mật khẩu của bạn đã được thay đổi thành công. Bây giờ bạn đã đăng nhập."
+      updated_not_active: "Mật khẩu của bạn đã được thay đổi thành công."
+    registrations:
+      edit:
+        edit: "Chỉnh sửa"
+        currently_waiting: "Hiện đang chờ xác nhận cho:"
+        is_blank: "(để trống nếu bạn không muốn thay đổi nó)"
+        min_characters: "ký tự tối thiểu"
+        password_cur: "(chúng tôi cần mật khẩu hiện tại của bạn để xác nhận các thay đổi của bạn)"
+        update: "Cập nhật"
+        back: "Quay lại"
+      new:
+        sign_up: "Đăng ký"
+        min_characters: "ký tự tối thiểu"
+      destroyed: "Từ biệt! Tài khoản của bạn đã được hủy thành công. Mong rằng chúng tôi sẽ sớm gặp lại bạn."
+      signed_up: "Chào mừng! Bạn đã đăng ký thành công."
+      signed_up_but_inactive: "Bạn đã đăng ký thành công. Tuy nhiên, chúng tôi không thể đăng nhập cho bạn vì tài khoản của bạn chưa được kích hoạt."
+      signed_up_but_locked: "Bạn đã đăng ký thành công. Tuy nhiên, chúng tôi không thể đăng nhập cho bạn vì tài khoản của bạn bị khóa."
+      signed_up_but_unconfirmed: "Một tin nhắn với một liên kết xác nhận đã được gửi đến địa chỉ email của bạn. Vui lòng nhấp vào liên kết để kích hoạt tài khoản của bạn."
+      update_needs_confirmation: "Bạn đã cập nhật tài khoản của mình thành công, nhưng chúng tôi cần xác minh địa chỉ email mới của bạn. Vui lòng kiểm tra email của bạn và nhấp vào liên kết xác nhận để xác nhận địa chỉ email mới của bạn."
+      updated: "Tài khoản của bạn đã được cập nhật thành công."
+      updated_but_not_signed_in: "Tài khoản của bạn đã được cập nhật thành công, nhưng vì mật khẩu của bạn đã được thay đổi, bạn cần đăng nhập lại."
+    sessions:
+      new:
+        log_in: "Đăng nhập"
+      signed_in: "Đăng nhập thành công"
+      signed_out: "Đăng xuất thành công"
+      already_signed_out: "Đã Đăng xuất"
+    unlocks:
+      send_instructions: "Bạn sẽ nhận được email hướng dẫn cách mở khóa tài khoản của mình sau vài phút."
+      send_paranoid_instructions: "Nếu tài khoản của bạn tồn tại, bạn sẽ nhận được email hướng dẫn cách mở khóa tài khoản sau vài phút."
+      unlocked: "Tài khoản của bạn đã được mở khóa thành công. Vui lòng đăng nhập để tiếp tục."
+    shared:
+      links:
+        forgot: "Quên mật khẩu?"
+        confirmation: "Không nhận được hướng dẫn xác nhận?"
+  errors:
+    messages:
+      already_confirmed: "đã được xác nhận, vui lòng thử đăng nhập"
+      confirmation_period_expired: "cần được xác nhận trong% {period}, vui lòng yêu cầu một cái mới"
+      expired: "đã hết hạn, vui lòng yêu cầu một cái mới"
+      not_found: "Không tìm thấy"
+      not_locked: "không bị khóa"
+      not_saved:
+        one: "1 lỗi bị cấm lưu% {resource} này:"
+        other: "Lỗi% {count} bị cấm lưu% {resource} này:"

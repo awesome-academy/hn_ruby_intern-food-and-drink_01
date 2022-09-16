@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  before_action :logged_in_user, only: %i(new create)
+  before_action :authenticate_user!, only: %i(new create)
   before_action :init_cart, :load_product_sizes
   before_action :check_quantity_product_sizes, only: %i(new create)
   before_action :find_order, only: %i(show update)
