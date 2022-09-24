@@ -7,6 +7,8 @@ class ApplicationController < ActionController::Base
   before_action :set_locale, :init_cart, :load_product_sizes
   before_action :configure_permitted_parameters, if: :devise_controller?
 
+  rescue_from CanCan::AccessDenied, with: :deny_access
+
   private
 
   def set_locale
@@ -28,5 +30,10 @@ class ApplicationController < ActionController::Base
                             remember_me address phone_num)
     devise_parameter_sanitizer.permit :sign_up, keys: added_attrs
     devise_parameter_sanitizer.permit :account_update, keys: added_attrs_update
+  end
+
+  def deny_access
+    flash[:danger] = t "access_denied"
+    redirect_to root_url
   end
 end

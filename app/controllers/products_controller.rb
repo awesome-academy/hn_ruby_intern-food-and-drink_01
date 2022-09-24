@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  authorize_resource
+
   def index
     @q = Product.asc_name.ransack(params[:q])
     if params[:sort]

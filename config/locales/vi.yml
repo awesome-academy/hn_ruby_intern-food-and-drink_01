@@ -1,6 +1,7 @@
 vi:
   not_product: "Sản phẩm không tồn tại"
   not_category: "Không tìm thấy loại hàng"
+  access_denied: "Quyền truy cập bị từ chối. Bạn không được phép truy cập trang được yêu cầu."
   layouts:
     header:
       about: "Về chúng tôi"

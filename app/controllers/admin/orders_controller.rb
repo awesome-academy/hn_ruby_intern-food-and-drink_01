@@ -2,6 +2,9 @@ class Admin::OrdersController < Admin::BaseController
   before_action :find_order, only: %i(show update)
   before_action :load_order_details, only: %i(show update)
   before_action :check_status_order, only: :update
+
+  authorize_resource
+
   def index
     @pagy, @orders = pagy Order.lastest_order
   end

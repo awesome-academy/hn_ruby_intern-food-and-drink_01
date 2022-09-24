@@ -1,6 +1,9 @@
 class Admin::CategoriesController < Admin::BaseController
   before_action :find_category, only: %i(edit update destroy)
   before_action :check_category_product, only: :destroy
+
+  authorize_resource
+
   def index
     @q = Category.ransack(params[:q])
     @pagy, @categories = pagy(@q.result, items: Settings.admin.category)

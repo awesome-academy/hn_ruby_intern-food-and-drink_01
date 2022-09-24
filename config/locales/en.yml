@@ -1,6 +1,7 @@
 en:
   not_product: "no exist product"
   not_category: "not found category"
+  access_denied: "Access denied. You are not authorized to access the requested page."
   layouts:
     header:
       about: "About"

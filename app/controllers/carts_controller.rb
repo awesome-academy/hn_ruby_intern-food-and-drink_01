@@ -5,6 +5,8 @@ class CartsController < ApplicationController
   before_action :load_product_sizes, only: :index
   before_action :load_product_size_by_primary_key, only: %i(update destroy)
 
+  authorize_resource class: false
+
   def index; end
 
   def create
