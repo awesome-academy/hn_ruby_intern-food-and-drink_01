@@ -3,6 +3,11 @@ class Product < ApplicationRecord
   has_many :sizes, through: :product_sizes
   has_one_attached :image
   belongs_to :category
+
+  ransacker :created_at_date, type: :date do
+    Arel.sql("date(created_at)")
+  end
+
   PRODUCT_ATTRS = %w( name unit_price description quantity
                       category_id image).freeze
 

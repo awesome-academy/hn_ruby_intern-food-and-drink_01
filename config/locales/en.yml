@@ -90,9 +90,11 @@ en:
       filter_size: "Filter by size"
       filter_category: "Find by category"
       filter_name: "Find by name"
-      name_product: "Name of product"
+      name_description: "Name or description of product"
       min: "Min price"
       max: "Max price"
+      Clear_all: "Clear all"
+      Filter: "Filter"
   carts:
     create:
       please_login: "Please login"
@@ -147,6 +149,15 @@ en:
     update:
       cancle: "Cancle successfuly"
       cancle_fail: "Cancle fails"
+    search:
+      field_search: "name or address or note"
+      status: "Status"
+      min_price: "Min price"
+      max_price: "Max price"
+      start_date: "Start date"
+      end_date: "End date"
+      Clear_all: "Clear all"
+      search: "Search"
   user_mailer:
     notification:
       sub: "Notification"
@@ -176,6 +187,15 @@ en:
       update:
         update_success: "Update success"
         update_fail: "Update fail"
+      search:
+        field_search: "name or address or note"
+        status: "Status"
+        min_price: "Min price"
+        max_price: "Max price"
+        start_date: "Start date"
+        end_date: "End date"
+        Clear_all: "Clear all"
+        search: "Search"
     static_pages:
       index:
         not_admin: "you are not admin"
@@ -215,8 +235,18 @@ en:
         action: "Action"
         new: "New product"
         not_product: "Do not have any products"
+        create: "Create"
       product:
         you_sure: "Are you sure"
+      search:
+        name: "Name or description of product"
+        min_price: "Min price"
+        max_price: "Max price"
+        category: "Category"
+        start_date: "Start date"
+        end_date: "End date"
+        Clear_all: "Clear all"
+        search: "Search"
     categories:
       create:
         create_success: "Create success"

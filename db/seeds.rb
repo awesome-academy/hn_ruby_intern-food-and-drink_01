@@ -29,42 +29,44 @@ Category.create!(
 
 20.times do |n|
   title = Faker::Food.unique.dish
-  description = Faker::Food.description
+  description = Faker::Food.dish
   price = Faker::Commerce.price(range: 1..100.0)
   quantity = Faker::Commerce.price(range: 1..100.0)
   thumbnail = Faker::Avatar.image
-  product = Product.create!(name: title,
+  product = Product.new(name: title,
                unit_price: price,
                quantity: quantity,
                thumbnail: thumbnail,
                description: description,
-               category_id: 1,
+               category_id: Category.all.pluck(:id).sample,
                created_at: (rand*30).days.ago,
                updated_at: (rand*30).days.ago
   )
   product.image.attach(io: File.open("#{Rails.root}/app/assets/images/images/phot#{n+1}.jpg"),
                                     filename: "photo#{n+1}.jpg",
                                     content_type: "image/jpg")
+  product.save!
 end
 
 20.times do |n|
   title = Faker::Food.unique.fruits
-  description = Faker::Lorem.sentence(word_count: 50)
+  description = Faker::Food.dish
   price = Faker::Commerce.price(range: 1..100.0)
   quantity = Faker::Commerce.price(range: 1..100.0)
   thumbnail = Faker::Avatar.image
-  product = Product.create!(name: title,
+  product = Product.new(name: title,
                unit_price: price,
                quantity: quantity,
                thumbnail: thumbnail,
                description: description,
-               category_id: 2,
+               category_id: Category.all.pluck(:id).sample,
                created_at: (rand*30).days.ago,
                updated_at: (rand*30).days.ago
   )
   product.image.attach(io: File.open("#{Rails.root}/app/assets/images/images/phot#{n+1}.jpg"),
                                     filename: "photo#{n+1}.jpg",
                                     content_type: "image/jpg")
+  product.save!
 end
 
 3.times do |n|

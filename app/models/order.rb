@@ -4,6 +4,10 @@ class Order < ApplicationRecord
 
   enum status: {pending: 0, accepted: 1, completed: 2, canceled: 3}
 
+  ransacker :created_at_date, type: :date do
+    Arel.sql("date(created_at)")
+  end
+
   ORDER_ATTRS = %w(name phone_num address note total_money).freeze
 
   validates :name,  presence: true,

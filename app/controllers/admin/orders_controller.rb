@@ -6,7 +6,8 @@ class Admin::OrdersController < Admin::BaseController
   authorize_resource
 
   def index
-    @pagy, @orders = pagy Order.lastest_order
+    @q = Order.lastest_order.ransack(params[:q])
+    @pagy, @orders = pagy(@q.result)
   end
 
   def show; end

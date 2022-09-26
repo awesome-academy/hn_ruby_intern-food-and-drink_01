@@ -1,0 +1,33 @@
+<div class="container">
+  <%= search_form_for [:admin, @q] do |f| %>
+    <div class="form-section">
+      <div class="col-3">
+        <%= f.search_field :name_or_description_cont, placeholder: t(".name_description") %>
+      </div>
+      <div class="col-3">
+        <%= f.number_field :unit_price_gteq, placeholder: t(".min_price") %>
+      </div>
+      <div class="col-3">
+        <%= f.number_field :unit_price_lteq, placeholder: t(".max_price") %>
+      </div>
+      <div class="col-3">
+        <%= f.label :category_id_eq, t(".category") %>
+        <%= f.select :category_id_eq, options_from_collection_for_select(Category.all, "id", "name", @q.category_id_eq), include_blank: true %>
+      </div>
+    </div>
+    <div class="form-section">
+      <div class="col-3">
+        <%= f.label :created_at_date_gteq, t(".start_date") %>
+        <%= f.date_field :created_at_date_gteq %>
+      </div>
+      <div class="col-3">
+        <%= f.label :created_at_date_lteq, t(".end_date") %>
+        <%= f.date_field :created_at_date_lteq %>
+      </div>
+    </div>
+    <%= link_to admin_products_path, class: "btn btn-small btn-warning" do %>
+      <i class="fa fa-undo icon-l"></i><%= t ".Clear_all" %>
+    <% end %>
+    <%= f.submit t(".search"), class: "btn btn-small btn-info" %>
+  <% end %>
+</div>

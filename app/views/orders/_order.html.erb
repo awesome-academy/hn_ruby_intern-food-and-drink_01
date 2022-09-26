@@ -2,7 +2,7 @@
   <td class="align-middle"><%= order.id %></td>
   <td class="align-middle"><%= order.name %></td>
   <td class="align-middle"><%= number_to_currency order.total_money %></td>
-  <td class="align-middle"><%= order.created_at %></td>
+  <td class="align-middle"><%= order.created_at.strftime("%d/%m/%Y") %></td>
   <td class="align-middle"><%= order.status %></td>
   <td class="align-middle">
     <%= link_to order_path(order) do %>
