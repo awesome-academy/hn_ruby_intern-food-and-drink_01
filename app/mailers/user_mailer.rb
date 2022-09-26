@@ -5,7 +5,7 @@ class UserMailer < ApplicationMailer
   #   en.user_mailer.notification.subject
   #
   def notification order
-    @user = User.find_by id: order.user.id
+    @user = User.find_by id: order.user_id
     @order = order
     mail to: @user.email, subject: t(".sub")
   end
