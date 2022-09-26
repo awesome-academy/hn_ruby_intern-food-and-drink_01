@@ -6,6 +6,8 @@ class OrdersController < ApplicationController
   before_action :load_order_details, only: :show
   before_action :check_status_order, only: :update
 
+  authorize_resource
+
   def index
     @pagy, @orders = pagy Order.lastest_order
   end
