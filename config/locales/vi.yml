@@ -128,7 +128,7 @@ vi:
       total: "Tổng cộng"
       submit_pay: "Đặt hàng"
     show:
-      not_found: "Không tìm thấy sanr phẩm"
+      not_found: "Không tìm thấy sản phẩm"
       image: "Hình ảnh"
       name: "Tên"
       number: "Số lượng"
@@ -145,6 +145,10 @@ vi:
       create_at: "Ngày tạo"
       status: "Trạng thái"
       action: "Hoạt động"
+    update:
+      cancle: "Xóa thành công"
+      cancle_fail: "Xóa thất bại"
+      write_reason: "Viết lý do của bạn"
     search:
       field_search: "Nhập tên, đại chỉ hoặc ghi chứ"
       status: "Trạng thái"
@@ -175,12 +179,17 @@ vi:
         total: "Tổng tiền"
         create: "Ngày tạo"
         info: "Chi tiết"
-      show:
+      order_modal:
         image: "Hình ảnh"
         name: "Tên"
         number: "Số lượng"
         size: "Size"
         price: "Giá"
+      order:
+        you_sure: "Bạn có chắc chắn muốn thay đổi trạng thái?"
+        reason: "Lý do"
+        close: "Đóng"
+        save: "Lưu"
       update:
         update_success: "Thay đổi thành công"
         update_fail: "Thất bại"
@@ -200,6 +209,7 @@ vi:
         menu: "Menu"
         manage_product: "Quản lý sản phẩm"
         manage_order: "Quản lý Order"
+        manage_size: "Quản lý size"
         logout: "Đăng xuất"
     products:
       create:
@@ -256,7 +266,7 @@ vi:
         have_product: "Đã có sản phẩm tồn tại"
       form:
         title: "Cập nhật"
-        name_category: "Name"
+        name_category: "Loại"
       index:
         code: "Mã"
         category: "Loại"
@@ -270,5 +280,34 @@ vi:
         edit: "Cập nhật"
       new:
         name_category: "Tên"
+        title: "thêm mới"
+        new: "Thêm mới"
+    sizes:
+      create:
+        create_success: "Tạo mới thành công"
+        create_fail: "Tạo mới thất bại"
+      update:
+        update_success: "Cập nhật thành công"
+        update_fail: "Cập nhật thất bại"
+      destroy:
+        destroy_success: "Xóa thành công"
+        destroy_fail: "Xóa thất bại"
+        have_product: "Đã có sản phẩm tồn tại"
+      form:
+        title: "Cập nhật"
+        size: "Tên"
+      index:
+        code: "Mã"
+        category: "Loại"
+        action: "Hành động"
+        new: "Thêm mới"
+      category:
+        you_sure: "Bạn có chắc không?"
+      edit:
+        name_size: "Tên"
+        title: "Cập nhật"
+        edit: "Cập nhật"
+      new:
+        name_size: "Tên"
         title: "thêm mới"
         new: "Thêm mới"

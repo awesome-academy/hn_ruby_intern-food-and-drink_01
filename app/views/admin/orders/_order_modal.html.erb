@@ -1,0 +1,37 @@
+<!-- Modal -->
+<div class="modal fade" id="post-modal" tabindex="-1" role="dialog" aria-labelledby="post-modal" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="post-modal">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <% if @order.canceled? %>
+          <strong> Reason: </strong>
+          <p><%= @order.reason %></p>
+        <% end %>
+        <table class="rwd-table">
+          <thead>
+            <tr>
+              <th><%= t ".image" %></th>
+              <th><%= t ".name" %></th>
+              <th><%= t ".number" %></th>
+              <th><%= t ".size" %></th>
+              <th><%= t ".price" %></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <%= render partial: "order_detail", collection: @order_details %>
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

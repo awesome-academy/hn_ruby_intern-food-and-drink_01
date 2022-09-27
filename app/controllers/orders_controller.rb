@@ -25,12 +25,12 @@ class OrdersController < ApplicationController
   end
 
   def update
-    if @order.update(reason: params_reason[:reason], status: :canceled)
-      flash[:success] = t ".cancle"
+    if params_reason[:reason].blank?
+      flash[:danger] = t ".write_reason"
+      redirect_to order_path(@order)
     else
-      flash.now[:danger] = t ".cancle_fail"
+      update_order
     end
-    redirect_to orders_url
   end
 
   private
@@ -65,7 +65,7 @@ class OrdersController < ApplicationController
     end
   rescue StandardError
     flash[:danger] = t ".checkout_fail"
-    redirect_to :new
+    render :new
   end
 
   def load_order_details
@@ -90,5 +90,14 @@ class OrdersController < ApplicationController
 
     flash[:danger] = t ".danger"
     redirect_to orders_path
+  end
+
+  def update_order
+    if @order.update(reason: params_reason[:reason], status: :canceled)
+      flash[:success] = t ".cancle"
+    else
+      flash.now[:danger] = t ".cancle_fail"
+    end
+    redirect_to orders_url
   end
 end

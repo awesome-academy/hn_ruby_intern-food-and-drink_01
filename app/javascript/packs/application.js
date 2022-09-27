@@ -12,12 +12,15 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-require("jquery")
-import "bootstrap"
+import jquery from 'jquery';
+window.$ = window.jquery = jquery;
+
+import "bootstrap";
+
+require("./main")
 require("packs/owl.carousel.min")
 require("packs/owl.carousel")
 require("packs/easing.min")
 require("./easing")
-require("./main")
 require("./contact")
 require("./jqBootstrapValidation")

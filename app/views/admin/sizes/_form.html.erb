@@ -1,0 +1,6 @@
+<%= form_for [:admin, @size] do |f| %>
+  <%= render "admin/shared/error_messages", object: f.object %>
+  <%= f.label :size, t(".size") %>
+  <%= f.text_field :size, class: "form-control" %>
+  <%= f.submit yield(:button_text), class: "submit-btn" %>
+<% end %>

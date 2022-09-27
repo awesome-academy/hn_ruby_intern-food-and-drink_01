@@ -10,20 +10,28 @@ class Admin::OrdersController < Admin::BaseController
     @pagy, @orders = pagy(@q.result)
   end
 
-  def show; end
+  def show
+    respond_to do |format|
+      format.js
+    end
+  end
 
   def update
+    return if @order.status == order_params[:status]
+
     if @order.handle_order order_params
       flash[:success] = t ".update_success"
     else
       flash.now[:danger] = t ".update_fail"
     end
-    redirect_to admin_orders_path
+    respond_to do |format|
+      format.html{redirect_to admin_orders_path}
+    end
   end
   private
 
   def order_params
-    params.require(:order).permit :status
+    params.require(:order).permit(:status, :reason)
   end
 
   def load_order_details

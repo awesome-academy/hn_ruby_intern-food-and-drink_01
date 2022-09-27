@@ -149,6 +149,7 @@ en:
     update:
       cancle: "Cancle successfuly"
       cancle_fail: "Cancle fails"
+      write_reason: "Write Reason"
     search:
       field_search: "name or address or note"
       status: "Status"
@@ -178,12 +179,17 @@ en:
         total: "Total Money"
         create: "Create at"
         info: "Info"
-      show:
+      order_modal:
         image: "Image"
         name: "Name"
         number: "Number"
         size: "Size"
         price: "Price"
+      order:
+        you_sure: "Are you sure?"
+        reason: "Reason"
+        close: "Close"
+        save: "Save"
       update:
         update_success: "Update success"
         update_fail: "Update fail"
@@ -204,6 +210,7 @@ en:
         manage_product: "Manage Product"
         manage_order: "Manage Order"
         manage_category: "Manage Category"
+        manage_size: "Manage Size"
         logout: "Log out"
     products:
       create:
@@ -276,3 +283,31 @@ en:
         new: "New category"
         title: "New category"
         name: "Name"
+    sizes:
+      create:
+        create_success: "Create success"
+        create_fail: "Create fail"
+      update:
+        update_success: "Update success"
+        update_fail: "Update fail"
+      destroy:
+        destroy_success: "Destroy success"
+        destroy_fail: "Destroy fail"
+        have_product: "Have an exist product"
+      form:
+        title: "Cập nhật"
+        size: "Name"
+      edit:
+        edit: "Update size"
+        title: "Update size"
+      index:
+        code: "Code"
+        size: "Size"
+        action: "Action"
+        new: "New Size"
+      size:
+        you_sure: "Are you sure"
+      new:
+        new: "New size"
+        title: "New size"
+        size: "Size"

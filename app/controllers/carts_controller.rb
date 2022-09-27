@@ -25,19 +25,18 @@ class CartsController < ApplicationController
     else
       flash[:danger] = t ".fail"
     end
-    redirect_to carts_path
+    respond_to do |format|
+      format.html{redirect_to carts_path}
+      format.js
+    end
   end
 
   def destroy
-    if @carts.key? params[:id]
-      @carts.delete params[:id]
-      flash[:success] = t ".success"
-      user_id = session[:user_id]
-      session["cart_#{user_id}"] = @carts
-    else
-      falsh[:danger] = t ".fail"
+    destroy_cart
+    respond_to do |format|
+      format.html{redirect_to carts_path}
+      format.js
     end
-    redirect_to carts_path
   end
 
   private
@@ -48,7 +47,7 @@ class CartsController < ApplicationController
     return if @product_size
 
     flash[:danger] = t ".not_found"
-    redirect_back_or root_path
+    redirect_to product_path(id: params[:product_id])
   end
 
   def load_product_size_by_primary_key
@@ -81,6 +80,18 @@ class CartsController < ApplicationController
       flash[:success] = t ".success"
     else
       flash[:danger] = t ".fail"
+    end
+  end
+
+  def destroy_cart
+    if @carts.key? params[:id]
+      @carts.delete params[:id]
+      flash[:success] = t ".success"
+      user_id = session[:user_id]
+      session["cart_#{user_id}"] = @carts
+      load_product_sizes
+    else
+      falsh[:danger] = t ".fail"
     end
   end
 end

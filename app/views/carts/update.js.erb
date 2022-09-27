@@ -1,0 +1,4 @@
+$('#cart-total-money').html("<%= number_to_currency total_price %>");
+$('#item-product-size-allprice_<%=@product_size.id%>').html(
+  "<%= number_to_currency total_price_product @product_size.id %>"
+);
