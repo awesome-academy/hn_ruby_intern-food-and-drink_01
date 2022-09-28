@@ -5,7 +5,8 @@ class Admin::ProductsController < Admin::BaseController
   authorize_resource
 
   def index
-    @pagy, @products = pagy Product.includes(:sizes).lastest
+    @q = Product.includes(:sizes).ransack(params[:q])
+    @pagy, @products = pagy(@q.result, items: Settings.admin.category)
   end
 
   def new

@@ -2,6 +2,7 @@
 <div class="container-fluid">
   <div class="row px-xl-5">
     <table class="table table-light table-borderless table-hover text-center mb-0">
+      <%= render "search" %>
       <thead class="thead-dark">
         <tr>
           <th><%= t ".code" %></th>
@@ -15,7 +16,7 @@
       <tbody class="align-middle">
         <%= render @orders %>
       </tbody>
-      <%== pagy_bootstrap_nav(@pagy) %>
     </table>
+    <%== pagy_bootstrap_nav(@pagy) %>
   </div>
 </div>

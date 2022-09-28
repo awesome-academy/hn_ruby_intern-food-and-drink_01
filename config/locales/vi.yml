@@ -90,9 +90,11 @@ vi:
       filter_size: "Lọc theo size"
       filter_category: "Lọc theo loại"
       filter_name: "Lọc theo tên"
-      name_product: "Nhập tên sản phẩm"
+      name_description: "Nhập tên hoặc mô tả sản phẩm"
       min: "Giá thấp nhất"
       max: "Giá cao nhất"
+      Clear_all: "Xóa tìm kiếm"
+      Filter: "Tìm kiếm"
   carts:
     create:
       please_login: "Hãy đăng nhập trước"
@@ -143,6 +145,15 @@ vi:
       create_at: "Ngày tạo"
       status: "Trạng thái"
       action: "Hoạt động"
+    search:
+      field_search: "Nhập tên, đại chỉ hoặc ghi chứ"
+      status: "Trạng thái"
+      min_price: "Giá tối thiểu"
+      max_price: "Giá tối đa"
+      start_date: "Ngày bắt đầu"
+      end_date: "Ngày kết thúc"
+      Clear_all: "Xóa tìm kiếm"
+      search: "Tìm kiếm"
   user_mailer:
     notification:
       sub: "Thông báo"
@@ -173,6 +184,15 @@ vi:
       update:
         update_success: "Thay đổi thành công"
         update_fail: "Thất bại"
+      search:
+        field_search: "Nhập tên, đại chỉ hoặc ghi chứ"
+        status: "Trạng thái"
+        min_price: "Giá tối thiểu"
+        max_price: "Giá tối đa"
+        start_date: "Ngày bắt đầu"
+        end_date: "Ngày kết thúc"
+        Clear_all: "Xóa tìm kiếm"
+        search: "Tìm kiếm"
     static_pages:
       index:
         not_admin: "Bạn không phải là admin"
@@ -211,8 +231,18 @@ vi:
         action: "Hành động"
         new: "Tạo mới"
         not_product: "Không có sản phẩm nào"
+        create: "Ngày tạo"
       product:
         you_sure: "Bạn có chắc là muốn xóa không?"
+      search:
+        name_description: "Tên hoặc mô tả sản phẩm"
+        min_price: "Giá thấp nhất"
+        max_price: "Giá cao nhất"
+        category: "Loại sản phẩm"
+        start_date: "Ngày bắt đầu"
+        end_date: "Ngày kết thúc"
+        Clear_all: "Xóa tìm kiếm"
+        search: "Tìm kiếm"
     categories:
       create:
         create_success: "Tạo mới thành công"

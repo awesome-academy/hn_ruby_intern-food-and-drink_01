@@ -1,15 +1,16 @@
 <div class="account-manage-page">
   <table class="rwd-table">
+    <%= render "search" %>
     <thead>
       <tr>
         <th><%= t ".code" %></th>
-        <th><%= t ".name" %></th>
+        <th><%= sort_link @q, :name, t(".name") %></th>
         <th><%= t ".phone" %></th>
         <th><%= t ".address" %></th>
         <th><%= t ".note" %></th>
         <th><%= t ".status" %></th>
-        <th><%= t ".total" %></th>
-        <th><%= t ".create" %></th>
+        <th><%= sort_link @q, :total_money, t(".total") %></th>
+        <th><%= sort_link @q, :created_at, t(".create") %></th>
         <th><%= t ".info" %></th>
       </tr>
     </thead>

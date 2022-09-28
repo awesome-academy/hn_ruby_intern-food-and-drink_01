@@ -1,14 +1,16 @@
 <div class="account-manage-page">
   <%= link_to t(".new"), new_admin_product_path, class: "btn btn-small btn-success"%>
   <table class="rwd-table">
+    <%= render "search" %>
     <thead>
       <tr>
         <th><%= t ".image" %></th>
-        <th><%= t ".name" %></th>
-        <th><%= t ".unit_price" %></th>
-        <th><%= t ".quantity" %></th>
+        <th><%= sort_link @q, :name, t(".name") %></th>
+        <th><%= sort_link @q, :unit_price, t(".unit_price") %></th>
+        <th><%= sort_link @q, :quantity, t(".quantity") %></th>
         <th><%= t ".size" %></th>
         <th><%= t ".action" %></th>
+        <th><%= sort_link @q, :created_at, t(".create") %></th>
       </tr>
     </thead>
     <tbody>

@@ -4,7 +4,7 @@
     <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3"><%= t ".filter_name" %></span></h5>
     <div class="bg-light p-4 mb-30">
       <div class="form-section">
-        <%= f.search_field :name_cont, placeholder: t(".name_product") %>
+        <%= f.search_field :name_or_description_cont, placeholder: t(".name_description") %>
       </div>
     </div>
     <!-- Price Start -->
@@ -24,12 +24,19 @@
     <div class="bg-light p-4 mb-30">
       <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
         <% Size.all.each do |size| %>
-          <%= check_box_tag('q[sizes_id_eq_any][]', size.id) %>
+          <%= check_box_tag("q[sizes_id_eq_any][]", size.id) %>
           <%= size.size %>
         <% end %>
       </div>
     </div>
-    <%= f.submit %>
+    <div class="bg-light p-4 mb-30">
+      <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+        <%= link_to request.path, class: "form-link" do %>
+          <i class="far fa-undo icon-l"></i><%= t ".Clear_all" %>
+        <% end %>
+        <%= f.submit t(".Filter"), class: "btn btn-primary" %>
+      </div>
+    </div>
   <% end %>
 </div>
 <!-- Shop Sidebar End -->

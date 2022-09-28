@@ -5,8 +5,8 @@
   <td><%= order.address %></td>
   <td><%= order.note %></td>
   <td><%= order.status %></td>
-  <td><%=number_to_currency order.total_money %></td>
-  <td><%= order.created_at %></td>
+  <td><%= number_to_currency order.total_money %></td>
+  <td><%= order.created_at.strftime("%d/%m/%Y") %></td>
   <td>
     <div class="action-btn">
       <%= link_to admin_order_path(order) do %>
