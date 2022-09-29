@@ -2,19 +2,28 @@
   <td class="align-middle"><%= image_tag product_size.product.image, style: "width: 50px;" %><%= product_size.product.name %></td>
   <td class="align-middle"><%= number_to_currency product_size.product.unit_price %></td>
   <td class="align-middle">
-    <%= form_with url: cart_path(id: product_size.id), method: :put, remote: true do |f| %>
-      <%= f.number_field :num, value: init_cart["#{product_size.id}"],
-        max: product_size.product.quantity, min: 0, class: "form-control" %>
-    </td>
-    <td class="align-middle"><%= total_price_product product_size %></td>
-    <td class="align-middle">
-      <%= f.button type: :submit, class: "btn btn-sm btn-warning" do %>
-        <span class="fa fa-edit"></span>
-      <% end %>
-      <%= link_to cart_path(id: product_size.id), method: :delete,
+    <%= form_tag cart_path(id: product_size.id), method: :put, remote: true do %>
+      <div class="input-group quantity mr-3" style="width: 130px;">
+        <div class="input-group-btn">
+          <button class="btn btn-primary btn-minus">
+            <i class="fa fa-minus"></i>
+          </button>
+        </div>
+        <%= text_field_tag :num, init_cart["#{product_size.id}"],
+        max: product_size.product.quantity, min: 1, class: "form-control bg-secondary border-0 text-center", id: "number_product" %>
+        <div class="input-group-btn">
+          <button class="btn btn-primary btn-plus">
+            <i class="fa fa-plus"></i>
+          </button>
+        </div>
+      </div>
+    <% end %>
+  </td>
+  <td class="align-middle", id ="item-product-size-allprice_<%=product_size.id%>"><%= total_price_product product_size.id %></td>
+  <td class="align-middle">
+    <%= link_to cart_path(id: product_size.id), method: :delete,
         data: {confirm: t(".confirm_delete")} do %>
-        <button class="btn btn-sm btn-danger"><i class="fa fa-times"></i></button>
-      <% end %>
+      <button class="btn btn-sm btn-danger"><i class="fa fa-times"></i></button>
     <% end %>
   </td>
 </tr>

@@ -1,3 +1,4 @@
+console.log("main")
 ;(function ($) {
   'use strict'
 
@@ -36,30 +37,60 @@
     $('html, body').animate({ scrollTop: 0 }, 1500, 'easeInOutExpo')
     return false
   })
+})(jQuery)
 
-  
+$(document).on('turbolinks:load', function(){
+  $('.select-status').on('focusin', function(){
+    $(this).data('val', $(this).val());
+  });
+
+  $(".select-status").on("change",function(event) {
+
+    event.preventDefault();
+    var prev = $(this).data('val');
+    console.log("here")
+    var button = $(this)
+    var state = $(this).val();
+    var id_this = this.id
+    if(state != "canceled") {
+      if(!confirm('Are you sure?')){
+        console.log(prev)
+        console.log(id_this)
+        $('#'+id_this).val(prev);
+        return;
+      }
+      this.form.submit();
+    }
+    else{
+      console.log(state)
+      $("div#reason-modal_" + this.id).modal();
+    }
+  })
 
   // Product Quantity
   $('.quantity button').on('click', function () {
+    console.log("click")
     var button = $(this)
     var oldValue = button
       .parent()
       .parent()
-      .find('input')
+      .find('#number_product')
       .val()
+      console.log(oldValue)
     if (button.hasClass('btn-plus')) {
+      console.log("plus")
       var newVal = parseFloat(oldValue) + 1
     } else {
-      if (oldValue > 0) {
+      if (oldValue > 1) {
         var newVal = parseFloat(oldValue) - 1
       } else {
-        newVal = 0
+        newVal = 1
       }
     }
     button
       .parent()
       .parent()
-      .find('input')
+      .find('#number_product')
       .val(newVal)
   })
-})(jQuery)
+})

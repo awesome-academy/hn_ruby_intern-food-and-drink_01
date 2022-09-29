@@ -1,0 +1,16 @@
+<tr>
+  <td><%= size.id %></td>
+  <td><%= size.size %></td>
+  <td>
+    <div class="action-btn">
+      <%= link_to edit_admin_size_path(size) do %>
+        <span class="fa fa-edit"></span>
+      <% end %>
+      <% if size.products.blank? %>
+        <%= link_to admin_size_path(size), method: :delete, data: { confirm: t(".you_sure") } do %>
+          <span class="fa fa-trash"></span>
+        <% end %>
+      <% end %>
+    </div>
+  </td>
+</tr>

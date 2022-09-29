@@ -6,8 +6,13 @@ module CartsHelper
     end
   end
 
-  def total_price_product product_size
-    product_size.product.unit_price * @carts[product_size.id.to_s].to_i
+  def total_price_product id
+    if product_size = ProductSize.find_by(id: id)
+      product_size.product.unit_price * @carts[product_size.id.to_s].to_i
+    else
+      flash[:danger] = I18n.t ".carts.danger_book"
+      redirect_to carts_path
+    end
   end
 
   def count_carts
@@ -17,7 +22,9 @@ module CartsHelper
   def clean_carts
     user_id = session[:user_id]
     session["cart_#{user_id}"].each do |key, _value|
-      session["cart_#{user_id}"].delete key unless Product.find_by id: key
+      unless ProductSize.find_by id: key.to_i
+        session["cart_#{user_id}"].delete key
+      end
     end
   end
 
@@ -38,7 +45,7 @@ module CartsHelper
       product_id = item.id
       quantity = @carts[product_id.to_s]
       if quantity > item.product.quantity
-        falsh[:danger] = t("hepler.product_stock", prod_name: item.product.name)
+        flash[:danger] = t("hepler.product_stock", prod_name: item.product.name)
         redirect_to root_path
       end
     end

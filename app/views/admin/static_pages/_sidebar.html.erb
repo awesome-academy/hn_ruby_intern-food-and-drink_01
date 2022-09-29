@@ -1,14 +1,17 @@
 <div class="sidebar">
-   <base href="admin">
-   <h3 class="title"><%= t ".menu" %></h3>
-   <div class="sidebar-button menu" >
-      <span class="fa fa-shopping-cart"></span> <%= link_to t(".manage_product"), admin_products_path, class: "sidebar-button"%>
-   </div>
-   <div class="sidebar-button menu" >
-      <span class="fa fa-shopping-cart"></span> <%= link_to t(".manage_order"), admin_orders_path, class: "sidebar-button"%>
-   </div>
-   <div class="sidebar-button menu" >
-      <span class="fa fa-shopping-cart"></span> <%= link_to t(".manage_category"), admin_categories_path, class: "sidebar-button"%>
-   </div>
-   <%= link_to t(".logout"), destroy_user_session_path, method: :delete, class: "sidebar-button"%>
+  <base href="admin">
+  <h3 class="title"><%= t ".menu" %></h3>
+  <div class="sidebar-button menu" >
+    <span class="fa fa-bowl-food"></span> <%= link_to t(".manage_product"), admin_products_path, class: "sidebar-button"%>
+  </div>
+  <div class="sidebar-button menu" >
+    <span class="fa fa-shopping-cart"></span> <%= link_to t(".manage_order"), admin_orders_path, class: "sidebar-button"%>
+  </div>
+  <div class="sidebar-button menu" >
+    <span class="fa fa-sitemap"></span> <%= link_to t(".manage_category"), admin_categories_path, class: "sidebar-button"%>
+  </div>
+  <div class="sidebar-button menu" >
+    <span class="fa fa-minimize"></span> <%= link_to t(".manage_size"), admin_sizes_path, class: "sidebar-button"%>
+  </div>
+  <%= link_to t(".logout"), destroy_user_session_path, method: :delete, class: "sidebar-button"%>
 </div>

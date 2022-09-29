@@ -26,7 +26,7 @@ class Order < ApplicationRecord
 
   def handle_order order_params
     ActiveRecord::Base.transaction do
-      update!(status: order_params["status"])
+      update!(status: order_params["status"], reason: order_params["reason"])
       return true unless completed?
 
       order_details.each do |order_detail|

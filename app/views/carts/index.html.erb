@@ -12,7 +12,7 @@
             <th><%= t ".change" %></th>
           </tr>
         </thead>
-        <tbody class="align-middle">
+        <tbody class="align-middle" id="cart_products">
           <%= render partial: "carts/product_size", collection: @product_sizes %>
         </tbody>
       </table>
@@ -23,10 +23,12 @@
         <div class="pt-2">
           <div class="d-flex justify-content-between mt-2">
             <h5><%= t ".total" %></h5>
-            <h5><%= number_to_currency total_price %></h5>
+            <h5 id="cart-total-money"><%= number_to_currency total_price %></h5>
           </div>
-          <%= link_to new_order_path do %>
-            <button class="btn btn-block btn-primary font-weight-bold my-3 py-3"><%= t ".checkout" %></button>
+          <% if total_price.positive? %>
+            <%= link_to new_order_path do %>
+              <button class="btn btn-block btn-primary font-weight-bold my-3 py-3"><%= t ".checkout" %></button>
+            <% end %>
           <% end %>
         </div>
       </div>
