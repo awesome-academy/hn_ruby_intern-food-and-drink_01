@@ -21,7 +21,7 @@ class Order < ApplicationRecord
   after_save :send_mail_notify
 
   def send_mail_notify
-    UserMailer.notification(self).deliver_now
+    OrderWorker.perform_async id
   end
 
   def handle_order order_params
